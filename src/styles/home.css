@@ -1,0 +1,165 @@
+.home-root {
+  width: 95%;
+  margin: 1em;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-container {
+  width: 100%;
+  min-height: 85vh;
+  margin: auto;
+  margin-top: 1.5em;
+}
+
+.content-container {
+  width: 100%;
+  text-align: right;
+}
+
+.title-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.title-name {
+  flex-grow: 1;
+  font-size: 3em;
+  text-align: left;
+  margin: 0;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-bottom: var(--color-primary) solid 0.11em;
+}
+
+.title-image {
+  width: 18em;
+  height: auto;
+  border-start-end-radius: 50%;
+  border-end-start-radius: 50%;
+  border: var(--color-primary) solid 0.3em;
+  background-color: var(--color-primary);
+}
+
+.subtitle-text {
+  font-size: 2em;
+}
+
+.buttons-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3em;
+}
+
+.arrow-button {
+  width: 2em;
+  font-size: 4em;
+  transition: transform 250ms ease-in-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2em;
+}
+
+.arrow-button:hover {
+  transform: translateY(0.25em);
+}
+
+.arrow-icon-top {
+  margin-bottom: -1.25em;
+}
+
+.arrow-icon-bottom {
+  margin-bottom: -0.5em;
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}
+
+.arrow-button:hover>.arrow-icon-bottom {
+  opacity: 1;
+}
+
+@media (min-aspect-ratio:3/2) {
+  .title-name {
+    font-size: 3em;
+  }
+
+  .subtitle-text {
+    font-size: 2em;
+  }
+
+  .title-image {
+    width: 18em;
+  }
+
+}
+
+@media (max-aspect-ratio:3/2) and (min-aspect-ratio:1/1) {
+  .title-name {
+    font-size: 2.5em;
+  }
+
+  .subtitle-text {
+    font-size: 1.75em;
+  }
+
+  .title-image {
+    width: 15em;
+    border-width: 0.25em;
+  }
+}
+
+@media (max-aspect-ratio:1/1) and (min-aspect-ratio:1/2) {
+  .title-name {
+    font-size: 2em;
+  }
+
+  .subtitle-text {
+    font-size: 1.5em;
+  }
+
+  .title-image {
+    width: 12em;
+    border-width: 0.2em;
+  }
+}
+
+@media (max-aspect-ratio:1/2) {
+  .title-name {
+    font-size: 1.5em;
+  }
+
+  .subtitle-text {
+    font-size: 1.25em;
+  }
+
+  .title-image {
+    width: 8em;
+    border-width: 0.2em;
+  }
+
+  .arrow-button {
+    font-size: 2.5em;
+  }
+}

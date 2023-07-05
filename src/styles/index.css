@@ -1,0 +1,19 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  background-color: var(--background-color-primary);
+  color: var(--color-primary);
+
+  --background-color-primary: #FDFCFD;
+  --background-color-secondary: #FDFFFC;
+  --color-primary: #2A2D34;
+  --color-secondary: #778DA9;
+  --error-color-primary: #e77b7b;
+  --error-color-secondary: #b86262;
+  /* 
+  color: #eaeaea;
+  color: #aaa; */
+}

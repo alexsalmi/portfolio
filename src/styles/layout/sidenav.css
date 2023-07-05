@@ -1,0 +1,60 @@
+.sidenav-root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.sidenav-link {
+  width: 100%;
+  height: 0;
+  /* change with javascript */
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: background-color 500ms ease-in-out, height 500ms ease-in-out;
+}
+
+.sidenav-link:hover {
+  background-color: var(--background-color-secondary);
+}
+
+.sidenav-text,
+.sidenav-text-selected {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: color 500ms ease-in-out;
+}
+
+.sidenav-text {
+  color: var(--background-color-primary);
+}
+
+.sidenav-text-selected {
+  color: var(--color-secondary);
+  background-color: var(--background-color-primary);
+}
+
+.sidenav-link:hover>.sidenav-text {
+  color: var(--color-primary);
+}
+
+.sidenav-link:hover>.sidenav-text-selected {
+  color: var(--color-primary);
+}
+
+@media (max-aspect-ratio:1/2) {
+  .sidenav-root {
+    font-size: 1em;
+  }
+}
