@@ -16,7 +16,7 @@ export const sendContactRequest = async (values: IFormValues) => {
     axios
       .post(config.CONTACT_REQUEST_API_URL, values, {
         headers: {
-          "x-api-key": config.CONTACT_REQUEST_API_URL
+          "x-api-key": config.CONTACT_REQUEST_API_KEY
         }
       })
       .then(response => {
