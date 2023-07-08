@@ -15,12 +15,12 @@ const About = () => {
       <div className="about-content">
         <p className="content-label">- Professional</p>
         <p className="content-paragraph">
-          {personal}
+          {professional}
         </p>
         <div className="personal-container">
           <p className="content-label">Personal -</p>
           <p className="content-paragraph">
-            {professional}
+            {personal}
           </p>
         </div>
         <p className="content-label">- Skills</p>

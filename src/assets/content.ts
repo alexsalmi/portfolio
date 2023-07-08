@@ -27,8 +27,8 @@ const urls = {
 
 // Content for the 'About' page
 const aboutContent = {
-  professional: "I am a full-stack engineer with years of experience creating scalable websites for companies of all sizes. I specialize in front-end/back-end work to deliver web apps specific to any project's requirements. I have experience in UI/UX design, API work, database management, cross-platform mobile app development, and architectural design.",
-  personal: "Outside of work, I love reading, running, basketball, comic books, video games, travel or working on side projects. I spent most of my life living in Sweden, before making use of my dual-citizenship and moving to Boston for college in 2015, where I have lived since.",
+  professional: "I am a full-stack engineer with years of experience creating scalable websites for companies of all sizes. I specialize in both front-end and back-end work to deliver web apps specific to any project's requirements. I have experience in UI/UX design, API work, database management, cross-platform mobile app development, and architectural design.",
+  personal: "Outside of work, I love reading, running, basketball, comic books, video games, travel, and working on side projects. I spent most of my life living in Sweden, before making use of my dual-citizenship and moving to Boston for college in 2015. I currently live in Brooklyn, NY with my girlfriend and dog, and don't plan on leaving any time soon!",
   skills: ["React", "NodeJS", "Javascript", "Typescript", "Java", "Spring Boot", ".NET", "React Native", "HTML", "CSS", "SQL", "AWS"]
 };
 
@@ -43,17 +43,40 @@ const resumeContent = {
   },
   experience: [
     {
+      title: "Senior Full-Stack Software Engineer",
+      company: "John Hancock",
+      startDate: "March 2023",
+      endDate: "Present",
+      description: "During the 2022 year end review cycle, I was rewarded for my hard work and increased responsibility by being promoted to senior-level engineer. Since then I have taken on the new challenge of being a mentor figure to several new employees that have joined the team, while continuing to deliver on my own work as I had been the previous 2.5 years.",
+      details: [
+        "Mentored four new employees joining our team, including teaching them the complexities of our various systems and delegating out user stories",
+        "Assumed the role of tech anchor for our team, being the main point of contact for colleagues with any inquiries regarding our security systems",
+        "Oversaw the full-stack development of a new set of login and multi-factor authentication pages, guiding four developers through the project"
+      ]
+    },
+    {
       title: "Full-Stack Software Engineer",
       company: "John Hancock",
-      startDate: "June 2020",
-      endDate: "Present",
-      description: "My first job after college, where I joined John Hancock's Software Engineering Development Program. The program included two year-long rotations, the first with the notification systems team, and the second with the security team. After graduating from the program, I elected to continue working with the security team.",
+      startDate: "June 2022",
+      endDate: "March 2023",
+      description: "After graduating from the development program, I elected to continue working with the security/profile management team, and was promoted to mid-level engineer. As I continued to familiarize myself with the systems behind the login, profile management, and security flows, I became an increasingly vital part of the team, continuously accepting more responsibility when the opportunities came along.",
       details: [
-        "Lead development of the Notification Portal UI using ReactJS, including tests in Jest and Cypress",
-        "Designed and developed the architecture and flow of the new Voice Notification APIs as well as the system's database schema",
-        "Assisted with the creation and maintenance of several notification and document management APIs in both Java Spring Boot and .Net Core, including writing unit tests",
-        "Redesigned several ReactJS pages for the login and profile management services",
-        "Contributed to the security APIs, including functions such as login, registration, change password, etc."
+        "Refactored the Password Validation API to comply with new password requirements within John Hancock, improving security for all John Hancock customers",
+        "Created a set of Stateful APIs in Node JS to enable account unlock and reset password functionality for the John Hancock Chatbot, used by over 10,000 customers per month",
+        "Collaborated with both consuming teams and our design teams to ensure our profile management UIs met the requirements set by each team and the company as a whole"
+      ]
+    },
+    {
+      title: "Associate Full-Stack Software Engineer",
+      company: "John Hancock",
+      startDate: "June 2020",
+      endDate: "June 2022",
+      description: "My first job after college, where I joined John Hancock's Software Engineering Development Program. The program included two year-long rotations, the first with the notification systems team, and the second with the security/profile management team. These two rotations were a tremendous experience, showing me what it means to be a software engineer in a professional environment, how to collaborate with your teammates, and deliver high quality products.",
+      details: [
+        "Lead development of a new internal Notification Portal front-end using React JS, which logs and tracks over 700,000 notification emails and text messages per month",
+        "Architected and developed a new set of .NET Core Voice Notification APIs, as well as the system's database schema, now utilized by 5,000 customers per month",
+        "Redesigned the React JS pages for the forgot username, forgot password, update profile, and account unlock operations to match John Hancock's new look and feel",
+        "Implemented a new Rate Limiting API in Node JS, used by the login and multi-factor authentication operations for all of John Hancock's customers"
       ]
     },
     {
@@ -61,11 +84,11 @@ const resumeContent = {
       company: "Third Eye Health",
       startDate: "June 2019",
       endDate: "March 2020",
-      description: "A summer internship with telehealth startup Third Eye Health, which extended into my senior year of college.",
+      description: "A summer internship with telehealth startup Third Eye Health, which extended into my senior year of college. This was my first real professional experience as a developer, teaching me a lot about programming and the development lifecycle that aren't taught in college curriculums.",
       details: [
-        "Performed full stack development on internal .NET Core dashboard for licensed physicians",
-        "Maintained Microsoft Server SQL server, including HIPPA compliant patient information",
-        "Designed and developed several front-end reports for patient records, doctor activity, etc."
+        "Performed full stack development on an internal dashboard using .NET Core with Razor pages, for licensed physicians to keep track of patient records",
+        "Maintained and contributed to the company's Microsoft SQL Server, including HIPAA compliant patient information",
+        "Designed and created several automated front-end reports for patient records, doctor activity, etc., also using .NET Core with Razor pages"
       ]
     },
     {
@@ -73,11 +96,11 @@ const resumeContent = {
       company: "Salmi Consulting",
       startDate: "January 2017",
       endDate: "September 2017",
-      description: "My first professional software engineering experience during a year off working on a couple of projects for my father's consulatant company.",
+      description: "My first semi-professional software engineering experience during my year off, working on a couple of projects for my father's consulatant company. While these were minor projects, having this experience so early on in my college career was a tremendous benefit.",
       details: [
         "Redesigned Salmi Consulting's website from the ground up using ASP.NET MVC with Razor pages",
-        "Developed easy to use web-based medical tests for ADHD patients using ReactJS",
-        "Maintained and contributed to the .NET Framework backend API for the medical test website"
+        "Developed easy to use web-based medical tests for ADHD patients using React JS",
+        "Added features and fixed bugs in the .NET Framework back-end API for the medical test website"
       ]
     }
   ]
