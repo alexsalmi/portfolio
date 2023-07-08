@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import validator from 'validator'
 import { Puff } from 'react-loading-icons';
 import { BsCheck2 } from 'react-icons/bs';
@@ -25,7 +25,9 @@ type Progress = "idle" | "loading" | "success" | "failed";
  * Contact page
  */
 const Contact = () => {
-  window.scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const defaultErrors: IFormErrors = {
     name: {

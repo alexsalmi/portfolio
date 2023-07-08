@@ -119,6 +119,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin-left: auto;
   border: var(--color-primary) solid 2px;
   background-color: var(--background-color-secondary);
+  color: var(--color-primary);
   border-radius: 0.5em;
   display: flex;
   justify-content: space-evenly;
