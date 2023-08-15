@@ -49,9 +49,9 @@ const resumeContent = {
       endDate: "Present",
       description: "During the 2022 year end review cycle, I was rewarded for my hard work and increased responsibility by being promoted to senior-level engineer. Since then I have taken on the new challenge of being a mentor figure to several new employees that have joined the team, while continuing to deliver on my own work as I had been the previous 2.5 years.",
       details: [
-        "Mentored four new employees joining our team, including teaching them the complexities of our various systems and delegating out user stories",
-        "Assumed the role of tech anchor for our team, being the main point of contact for colleagues with any inquiries regarding our security systems",
-        "Oversaw the full-stack development of a new set of login and multi-factor authentication pages, guiding four developers through the project"
+        "Contributed to the architecture of a new login and multi-factor authentication module built in React and Node.js, to be used by 150,000 users per month",
+        "Managed junior engineers through the full-stack development of the new login module, as well as contributing to the development myself",
+        "Mentored four new employees joining our team, including teaching them the complexities of our various systems and guiding them through user stories"
       ]
     },
     {

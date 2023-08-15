@@ -52,20 +52,14 @@
   }
 }
 
-@media (min-width: 1800px) {
-  .root {
-    font-size: 200%;
-  }
-}
-
 @media (min-width: 3000px) {
   .root {
-    font-size: 250%;
+    font-size: 150%;
   }
 }
 
 @media (min-width: 4000px) {
   .root {
-    font-size: 300%;
+    font-size: 200%;
   }
 }
