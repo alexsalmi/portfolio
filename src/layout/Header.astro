@@ -1,10 +1,10 @@
 ---
-import { Sun } from '@lucide/astro';
+import { Menu, Sun } from '@lucide/astro';
 import { THEME_TOGGLE_BUTTON_ID } from '../constants';
 ---
 <header>
-	<span>Alex Salmi</span>
-	<nav>
+	<h1 class="title">Alex Salmi</h1>
+	<nav class="nav">
 		<ul>
 			<li class="navList">
 				<a href="/about" class="navItem">About</a>
@@ -17,27 +17,69 @@ import { THEME_TOGGLE_BUTTON_ID } from '../constants';
 	<button class="themeBtn" id={THEME_TOGGLE_BUTTON_ID}>
 		<Sun class='icon'/>
 	</button>
+	<button class="menuBtn" id={THEME_TOGGLE_BUTTON_ID}>
+		<Menu class='icon'/>
+	</button>
 </header>
 
 <style>
 	header {
-		background-color: var(--background-primary);
+		width: calc(100% - 4rem);
+		max-width: 1440px;
+		height: 3rem;
+		background: var(--background-primary-blurred);
 		position: sticky;
 		top: 0.75em;
 		padding: 0.5rem 2rem;
 		border-radius: 0.75rem;
-		box-shadow: 0 0.5rem 0.5rem var(--shadow), 0 -0.25rem 0.5rem var(--shadow);
-		backdrop-filter: blur(1px);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
 		display: flex;
+		justify-content: center;
 		align-items: center;
-		gap: 5rem;
 		font-size: 1.1rem;
 		font-weight: 500;
+		transition: box-shadow 0.1s linear;
+	}
+
+	header.shadow {
+		box-shadow: 0 0 0.33rem var(--shadow);
+	}
+	
+	header.animate-in {
+		animation: 0.25s linear header-in;
+	}
+
+	header.animate-out {
+		animation: 0.25s linear header-out;
+		transform: translateY(-5rem);
+	}
+
+	.title {
+		font-size: 1.25rem;
+		font-weight: 500;
+		margin-left: 0;
+		margin-right: auto;
+	}
+
+	.nav {
+		position: absolute;
 	}
 
 	.navList {
 		display: flex;
-		gap: 2rem;
+		gap: 1rem;
+	}
+
+	.navItem {
+		padding: 0.25rem 0.5rem;
+		border-radius: 0.5rem;
+		transition: all 0.25s ease;
+	}
+
+	.navItem:hover {
+		text-decoration: none;
+		background-color: var(--background-secondary);
 	}
 
 	.themeBtn {
@@ -47,6 +89,10 @@ import { THEME_TOGGLE_BUTTON_ID } from '../constants';
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin-right: 0;
+		margin-left: auto;
+		background-color: inherit;
+		transition: background-color 0.25s ease;
 	}
 
 	.themeBtn:hover {
@@ -61,5 +107,25 @@ import { THEME_TOGGLE_BUTTON_ID } from '../constants';
 		background-color: inherit;
 		color: var(--foreground);
 		opacity: 0.5;
+		transition: opacity 0.25s ease;
+	}
+
+	.menuBtn {
+		display: none;
+	}
+
+	.menuBtn > .icon {
+		opacity: 1;
+	}
+
+	@media (max-width: 800px) {
+		.navList,
+		.themeBtn {
+			display: none;
+		}
+
+		.menuBtn {
+			display: block;
+		}
 	}
 </style>

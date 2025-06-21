@@ -9,15 +9,19 @@ export default (() => {
 
     const currDir = window.scrollY > prevLoc ? 'down' : 'up';
 
-    if(currDir === 'down' && window.scrollY > 100 && !header.classList.contains('animate-header-out')) {
-      header.classList.add('animate-header-out');
-      header.classList.remove('animate-header-in');
+    if(currDir === 'down' && window.scrollY > 200 && !header.classList.contains('animate-out')) {
+      header.classList.add('animate-out');
+      header.classList.remove('animate-in');
+    }
+    else if(currDir === 'up' && header.classList.contains('animate-out')) {
+      header.classList.remove('animate-out');
+      header.classList.add('animate-in');
     }
 
-    if(currDir === 'up' && !header.classList.contains('animate-header-in')) {
-      header.classList.remove('animate-header-out');
-      header.classList.add('animate-header-in');
-    }
+    if(window.scrollY > 0 && !header.classList.contains('shadow'))
+      header.classList.add('shadow');
+    else if (window.scrollY === 0 && header.classList.contains("shadow"))
+      header.classList.remove('shadow');
 
     prevLoc = window.scrollY;
   });

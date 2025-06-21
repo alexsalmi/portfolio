@@ -1,6 +1,6 @@
 @keyframes header-in {
 	from {
-		transform: translateY(-4rem);
+		transform: translateY(-5rem);
 	}
 	to {
 		transform: translateY(0);
@@ -12,15 +12,6 @@
 		transform: translateY(0);
 	}
 	to {
-		transform: translateY(-4rem);
+		transform: translateY(-5rem);
 	}
-}
-
-.animate-header-in {
-	animation: 0.25s linear header-in;
-}
-
-.animate-header-out {
-	animation: 0.25s linear header-out;
-	transform: translateY(-4rem);
 }

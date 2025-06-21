@@ -2,8 +2,9 @@
   --background-primary: #f1f5f9;
   --background-secondary: #e2e8f0;
   --background-alternate: #f1f5f9;
+  --background-primary-blurred: rgba(241, 245, 249, 0.8);
 
-  --shadow: #e8edf3;
+  --shadow: #030712;
 
   --foreground: #030712;
 }
@@ -12,8 +13,9 @@
   --background-primary: #111827;
   --background-secondary: #1f2937;
   --background-alternate: #334155;
+  --background-primary-blurred: rgba(17, 24, 39, 0.8);
 
-  --shadow: #171f2e;
+  --shadow: #4b5563;
 
   --foreground: #f1f5f9;
 }
@@ -35,7 +37,6 @@ body {
 
 main {
   flex: 1 1;
-  padding: 2rem 1rem 1rem;
   width: 100%;
   display: flex;
   flex-direction: column;
