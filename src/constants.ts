@@ -1,0 +1,1 @@
+export const THEME_TOGGLE_BUTTON_ID = "theme-toggle-button";

@@ -1,7 +1,9 @@
 ---
-
+import { Sun } from '@lucide/astro';
+import { THEME_TOGGLE_BUTTON_ID } from '../constants';
 ---
 <header>
+	<span>Alex Salmi</span>
 	<nav>
 		<ul>
 			<li class="navList">
@@ -12,16 +14,25 @@
 			</li>
 		</ul>
 	</nav>
+	<button class="themeBtn" id={THEME_TOGGLE_BUTTON_ID}>
+		<Sun class='icon'/>
+	</button>
 </header>
 
 <style>
 	header {
-		background-color: var(--background-alternate);
+		background-color: var(--background-primary);
 		position: sticky;
-		top: 0.5rem;
-		padding: 0.5rem 1.5rem;
+		top: 0.75em;
+		padding: 0.5rem 2rem;
 		border-radius: 0.75rem;
-		box-shadow: 0 0.1rem 1rem var(--background-alternate);
+		box-shadow: 0 0.5rem 0.5rem var(--shadow), 0 -0.25rem 0.5rem var(--shadow);
+		backdrop-filter: blur(1px);
+		display: flex;
+		align-items: center;
+		gap: 5rem;
+		font-size: 1.1rem;
+		font-weight: 500;
 	}
 
 	.navList {
@@ -29,8 +40,26 @@
 		gap: 2rem;
 	}
 
-	.navItem {
-		font-size: 1.1rem;
-		font-weight: 500;
+	.themeBtn {
+		height: 2rem;
+		width: 2rem;
+		border-radius: 0.66rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.themeBtn:hover {
+		background-color: var(--background-secondary);
+	}
+
+	.themeBtn:hover > .icon {
+		opacity: 1;
+	}
+
+	.icon {
+		background-color: inherit;
+		color: var(--foreground);
+		opacity: 0.5;
 	}
 </style>

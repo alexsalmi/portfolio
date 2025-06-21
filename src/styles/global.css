@@ -1,7 +1,19 @@
 :root {
-  --background-primary: #1f2937;
-  --background-secondary: #1e293b;
-  --background-alternate: #0f172a;
+  --background-primary: #f1f5f9;
+  --background-secondary: #e2e8f0;
+  --background-alternate: #f1f5f9;
+
+  --shadow: #e8edf3;
+
+  --foreground: #030712;
+}
+
+.dark {
+  --background-primary: #111827;
+  --background-secondary: #1f2937;
+  --background-alternate: #334155;
+
+  --shadow: #171f2e;
 
   --foreground: #f1f5f9;
 }
@@ -25,4 +37,7 @@ main {
   flex: 1 1;
   padding: 2rem 1rem 1rem;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

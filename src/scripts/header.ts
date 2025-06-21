@@ -2,7 +2,6 @@ export default (() => {
   const header = document.querySelector("header");
 
   let prevLoc = window.scrollY;
-  let prevDir = 'none';
 
   document.addEventListener('scroll', () => {
     if(!header)
@@ -10,17 +9,16 @@ export default (() => {
 
     const currDir = window.scrollY > prevLoc ? 'down' : 'up';
 
-    if(currDir === 'down' && prevDir !== "down") {
+    if(currDir === 'down' && window.scrollY > 100 && !header.classList.contains('animate-header-out')) {
       header.classList.add('animate-header-out');
       header.classList.remove('animate-header-in');
     }
 
-    if(currDir === 'up' && prevDir !== 'up') {
+    if(currDir === 'up' && !header.classList.contains('animate-header-in')) {
       header.classList.remove('animate-header-out');
       header.classList.add('animate-header-in');
     }
 
-    prevDir = currDir;
     prevLoc = window.scrollY;
   });
 })();
