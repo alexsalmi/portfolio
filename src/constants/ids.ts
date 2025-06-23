@@ -1,9 +1,9 @@
 // Section ids
-export const HERO_SECTION_ID = "hero-section";
-export const ABOUT_SECTION_ID = "about-section";
-export const EXPERIENCE_SECTION_ID = "experience-section";
-export const PROJECTS_SECTION_ID = "projects-section";
-export const CONNECT_SECTION_ID = "connect-section";
+export const HERO_SECTION_ID = "hero";
+export const ABOUT_SECTION_ID = "about";
+export const EXPERIENCE_SECTION_ID = "experience";
+export const PROJECTS_SECTION_ID = "projects";
+export const CONNECT_SECTION_ID = "connect";
 
 // Button ids
 export const THEME_TOGGLE_BUTTON_ID = "theme-toggle-button";

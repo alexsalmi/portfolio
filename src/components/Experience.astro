@@ -1,18 +1,98 @@
 ---
+import { Image } from "astro:assets";
+import rockstarLogo from "../assets/rockstar.svg";
+import jhLogo from "../assets/jh.jpg";
+import buLogo from "../assets/bu.png";
 import { EXPERIENCE_SECTION_ID } from "../constants";
 ---
 
 <section class="experience" id={EXPERIENCE_SECTION_ID}>
-  <h2>Experience</h2>
+  <h2 class="title">Experience</h2>
+  <h3 class="sectionTitle">Work</h3>
+  <div class="job">
+    <Image
+      class="logo"
+      width={248}
+      height={248}
+      src={rockstarLogo}
+      alt="Rockstar Games Logo"
+    />
+    <div class="jobTitle">
+      <h2>Software Engineer</h2>
+      <h3>Rockstar Games - Technical Art</h3>
+    </div>
+  </div>
+  <div class="job">
+    <Image
+      class="logo"
+      width={248}
+      height={248}
+      src={jhLogo}
+      alt="John Hancock Logo"
+    />
+    <div class="jobTitle">
+      <h2>Senior Full Stack Software Engineer</h2>
+      <h3>John Hancock - Identity & Access Management</h3>
+    </div>
+  </div>
+  <h3 class="sectionTitle">Education</h3>
+  <div class="job">
+    <Image
+      class="logo"
+      width={248}
+      height={248}
+      src={buLogo}
+      alt="Boston University Logo"
+    />
+    <div class="jobTitle">
+      <h2>B.S. Computer Engineering</h2>
+      <h3>Boston University, College of Engineering</h3>
+    </div>
+  </div>
 </section>
 
 <style>
   .experience {
-    height: 50em;
     width: 100%;
+    max-width: calc(var(--max-width) * 3 / 4);
     background-color: var(--background-primary);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding: 5rem 1rem;
+    gap: 2rem;
+  }
+
+  .title {
+    font-weight: 600;
+    width: 100%;
+    font-size: 2.5rem;
+    border-bottom: 1px solid var(--accent-secondary);
+  }
+
+  .sectionTitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    opacity: 0.66;
+  }
+
+  .job {
+    width: 100%;
+    min-height: 4rem;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .logo {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 0.8rem;
+  }
+
+  .jobTitle {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 </style>
