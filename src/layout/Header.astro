@@ -46,7 +46,7 @@ import { Icon } from "astro-icon/components";
 <style>
   header {
     width: calc(100% - 1rem);
-    max-width: 1440px;
+    max-width: var(--max-width);
     background: var(--background-primary-blurred);
     position: fixed;
     top: 0.5em;
@@ -59,6 +59,7 @@ import { Icon } from "astro-icon/components";
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 100;
   }
 
   header.shadow {

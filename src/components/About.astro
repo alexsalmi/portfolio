@@ -1,18 +1,145 @@
 ---
-import { ABOUT_SECTION_ID } from "../constants";
+import { ABOUT_SECTION_ID, SKILLS } from "../constants";
+import { Icon } from "astro-icon/components";
 ---
 
 <section class="about" id={ABOUT_SECTION_ID}>
-  <h2>About</h2>
+  <article class="summary">
+    <h2 class="title">About Me</h2>
+    <p>
+      I'm a full stack software engineer with 5 years of experience creating
+      highly performant and scalable web apps. I specialize in creating sleek
+      front ends in Next.js and React, as well as performant back ends in .NET
+      Core and Node.js. I have worked in a variety of industries and company
+      sizes throughout my career, from large established financial institutions,
+      to smaller creative studios in the video game industry.
+    </p>
+    <p>
+      I have a deep passion for development and software engineering. In my free
+      time, I like to work on various side projects to teach myself new
+      languages or frameworks, or even just to create something that I'm
+      passionate about.
+    </p>
+  </article>
+  <section class="skills">
+    <h3 class="title">My Skills</h3>
+    <p class="description">
+      These are the tools I have the most experience using to create, deploy,
+      and maintain applications in both my professional and personal projects.
+    </p>
+    {
+      Object.keys(SKILLS).map((section) => (
+        <div class="skillSection">
+          <h4 class="skillSectionLabel">{section}</h4>
+          <div class="skillList">
+            {SKILLS[section as keyof SkillSections].map(
+              ({ label, icon, color, background }) => (
+                <span
+                  class="skillItem"
+                  style={`color: ${color}; background-color: ${background};`}
+                >
+                  <Icon name={icon} class="icon" id={`${label}_icon`} />
+                  <label for={`${label}_icon`}>{label}</label>
+                </span>
+              ),
+            )}
+          </div>
+        </div>
+      ))
+    }
+  </section>
 </section>
 
 <style>
   .about {
-    height: 50em;
     width: 100%;
     background-color: var(--background-secondary);
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 1rem;
+    gap: 3rem;
+  }
+
+  .summary {
+    max-width: calc(var(--max-width) * 3 / 4);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .title {
+    font-weight: 600;
+    width: 100%;
+    font-size: 2.5rem;
+    border-bottom: 1px solid var(--accent-secondary);
+  }
+
+  .description {
+    margin-bottom: 1.5rem;
+  }
+
+  .skills {
+    width: 100%;
+    max-width: calc(var(--max-width) * 3 / 4);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    background-color: inherit;
+  }
+
+  .skills > .title {
+    font-size: 1.9rem;
+  }
+
+  .skillSection {
+    position: relative;
+    flex: 1 1;
+    min-width: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--accent-secondary);
+    box-shadow: 0 0 0.5rem var(--shadow);
+    border-radius: 1rem;
+    padding: 0.5rem 1rem 1rem;
+    background-color: inherit;
+    margin: 1rem;
+    background-color: var(--background-alternate);
+  }
+
+  .skillSectionLabel {
+    width: 100%;
+    padding: 0 0.25rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    opacity: 0.9;
+    border-bottom: 1px solid var(--accent-secondary);
+  }
+
+  .skillList {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .skillItem {
+    flex-grow: 1;
+    display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+  }
+
+  .icon {
+    width: 1.75rem;
+    height: 1.75rem;
   }
 </style>

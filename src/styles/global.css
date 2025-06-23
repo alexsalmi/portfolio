@@ -1,23 +1,29 @@
 :root {
   --background-primary: #f1f5f9;
   --background-secondary: #e2e8f0;
+  --background-alternate: #f1f5f9;
   --background-primary-blurred: rgba(241, 245, 249, 0.8);
 
   --shadow: #9ca3af;
 
   --foreground: #022c22;
   --accent: #d1d5db;
+  --accent-secondary: #d1d5db;
+
+  --max-width: 1440px;
 }
 
 .dark {
   --background-primary: #22262f;
   --background-secondary: #333947;
+  --background-alternate: #22262f;
   --background-primary-blurred: rgba(34, 38, 47, 0.8);
 
   --shadow: #4b5563;
 
   --foreground: #ecfdf5;
   --accent: #374151;
+  --accent-secondary: #4b5563;
 }
 
 html {
