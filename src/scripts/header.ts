@@ -1,21 +1,52 @@
 import {
   DROPDOWN_MENU_ID,
-  HEADER_CLOSE_ICON,
-  HEADER_MENU_ICON,
+  HEADER_CLOSE_ICON_ID,
+  HEADER_MENU_ICON_ID,
   MAIN_HEADER_ID,
   MENU_TOGGLE_BUTTON_ID,
 } from "../constants";
 
 export default (() => {
+  // #region Setup
+  // Get all relevant elements
   const header = document.querySelector("header");
   const menuBtn = document.querySelector(`#${MENU_TOGGLE_BUTTON_ID}`);
   const dropdownMenu = document.querySelector(`#${DROPDOWN_MENU_ID}`);
   const mainHeaderSection = document.querySelector(`#${MAIN_HEADER_ID}`);
-  const headerMenuIcon = document.querySelector(`#${HEADER_MENU_ICON}`);
-  const headerCloseIcon = document.querySelector(`#${HEADER_CLOSE_ICON}`);
+  const headerMenuIcon = document.querySelector(`#${HEADER_MENU_ICON_ID}`);
+  const headerCloseIcon = document.querySelector(`#${HEADER_CLOSE_ICON_ID}`);
 
+  // Initialize variable for keeping track of the previous scroll value
   let prevLoc = window.scrollY;
+  // #endregion
 
+  // #region Helper Functions
+  const hideHeader = () => {
+    header?.classList.add("animate-out");
+    header?.classList.remove("animate-in");
+  };
+
+  const showHeader = () => {
+    header?.classList.remove("animate-out");
+    header?.classList.add("animate-in");
+  };
+
+  const hideDropdownMenu = () => {
+    dropdownMenu?.classList.remove("expanded");
+    headerMenuIcon?.classList.add("visible");
+    headerCloseIcon?.classList.remove("visible");
+    if (window.scrollY === 0) header?.classList.remove("shadow");
+  };
+
+  const expandDropdownMenu = () => {
+    dropdownMenu?.classList.add("expanded");
+    headerMenuIcon?.classList.remove("visible");
+    headerCloseIcon?.classList.add("visible");
+  };
+  // #endregion
+
+  // #region Event Listeners
+  // Event listener to show/hide the header when scrolling
   document.addEventListener("scroll", () => {
     if (!header || !dropdownMenu) return;
 
@@ -26,14 +57,10 @@ export default (() => {
       window.scrollY > 200 &&
       !header.classList.contains("animate-out")
     ) {
-      header.classList.add("animate-out");
-      header.classList.remove("animate-in");
-      dropdownMenu.classList.remove("expanded");
-      headerMenuIcon?.classList.add("visible");
-      headerCloseIcon?.classList.remove("visible");
+      hideHeader();
+      hideDropdownMenu();
     } else if (currDir === "up" && header.classList.contains("animate-out")) {
-      header.classList.remove("animate-out");
-      header.classList.add("animate-in");
+      showHeader();
     }
 
     if (window.scrollY > 0 && !header.classList.contains("shadow"))
@@ -48,34 +75,24 @@ export default (() => {
     prevLoc = window.scrollY;
   });
 
-  menuBtn?.addEventListener("click", (e) => {
+  // Event listener to expand/collapse the dropdown menu when in mobile view
+  menuBtn?.addEventListener("click", () => {
     if (!header || !dropdownMenu) return;
 
-    if (dropdownMenu.classList.contains("expanded")) {
-      dropdownMenu.classList.remove("expanded");
-      headerMenuIcon?.classList.add("visible");
-      headerCloseIcon?.classList.remove("visible");
-      if (window.scrollY === 0) header.classList.remove("shadow");
-    } else {
-      header.classList.add("shadow");
-      dropdownMenu.classList.add("expanded");
-      headerMenuIcon?.classList.remove("visible");
-      headerCloseIcon?.classList.add("visible");
-    }
+    if (dropdownMenu.classList.contains("expanded")) hideDropdownMenu();
+    else expandDropdownMenu();
   });
 
+  // Event listener to prevent clicks within the header from collapsing the dropdown menu
   mainHeaderSection?.addEventListener("click", (e) => {
     e.stopPropagation();
   });
 
+  // Global event listener to collapse the dropdown menu whenever the user clicks outside of the header
   document.addEventListener("click", () => {
     if (!header || !dropdownMenu) return;
 
-    if (dropdownMenu.classList.contains("expanded")) {
-      dropdownMenu.classList.remove("expanded");
-      headerMenuIcon?.classList.add("visible");
-      headerCloseIcon?.classList.remove("visible");
-      if (window.scrollY === 0) header.classList.remove("shadow");
-    }
+    if (dropdownMenu.classList.contains("expanded")) hideDropdownMenu();
   });
+  // #endregion
 })();

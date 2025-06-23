@@ -1,4 +1,11 @@
 ---
+import {
+  ABOUT_SECTION_ID,
+  CONNECT_SECTION_ID,
+  EXPERIENCE_SECTION_ID,
+  PROJECTS_SECTION_ID,
+} from "../constants";
+
 interface Props {
   direction?: "horizontal" | "vertical";
 }
@@ -9,13 +16,14 @@ const { direction } = Astro.props;
 <nav class=`nav ${direction || "horizontal"}`>
   <ul>
     <li class=`navList ${direction || "horizontal"}`>
-      <a href="/about" class="navItem">About</a>
-      <a href="/experience" class="navItem">Experience</a>
-      <a href="/projects" class="navItem">Projects</a>
-      <a href="/connect" class="navItem">Connect</a>
+      <a href=`#${ABOUT_SECTION_ID}` class="navItem">About</a>
+      <a href=`#${EXPERIENCE_SECTION_ID}` class="navItem">Experience</a>
+      <a href=`#${PROJECTS_SECTION_ID}` class="navItem">Projects</a>
+      <a href=`#${CONNECT_SECTION_ID}` class="navItem">Connect</a>
     </li>
   </ul>
 </nav>
+
 <style>
   .nav.horizontal {
     position: absolute;

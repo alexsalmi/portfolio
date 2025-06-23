@@ -1,13 +1,14 @@
 ---
 import { Image } from "astro:assets";
 import headshotImage from "../assets/headshot.jpeg";
+import { HERO_SECTION_ID } from "../constants";
 
 const yoe = Math.floor(
   new Date(Date.now() - new Date("06/15/2020").getTime()).getFullYear() - 1970,
 );
 ---
 
-<section class="hero">
+<section class="hero" id={HERO_SECTION_ID}>
   <Image
     class="headshot-image"
     width={320}
@@ -23,9 +24,9 @@ const yoe = Math.floor(
         performant, scalable web apps.
       </p>
       <p>
-        I've primarily created applications in Identity and Access Management,
-        and more recently internal tooling for animation and scripting
-        workflows.
+        I've primarily created applications related to authentication, user
+        management, and more recently internal tooling for animation and
+        scripting workflows.
       </p>
     </div>
   </div>

@@ -2,10 +2,10 @@
 import { Menu, Moon, Sun, X } from "@lucide/astro";
 import {
   DROPDOWN_MENU_ID,
-  HEADER_CLOSE_ICON,
-  HEADER_DARK_MODE_ICON,
-  HEADER_LIGHT_MODE_ICON,
-  HEADER_MENU_ICON,
+  HEADER_CLOSE_ICON_ID,
+  HEADER_DARK_MODE_ICON_ID,
+  HEADER_LIGHT_MODE_ICON_ID,
+  HEADER_MENU_ICON_ID,
   MAIN_HEADER_ID,
   MENU_TOGGLE_BUTTON_ID,
   THEME_TOGGLE_BUTTON_ID,
@@ -18,12 +18,12 @@ import Navigation from "../components/Navigation.astro";
     <h1 class="title">Alex Salmi</h1>
     <Navigation />
     <button class="themeBtn" id={THEME_TOGGLE_BUTTON_ID}>
-      <Sun class="icon theme visible" id={HEADER_LIGHT_MODE_ICON} />
-      <Moon class="icon theme" id={HEADER_DARK_MODE_ICON} />
+      <Sun class="icon theme visible" id={HEADER_LIGHT_MODE_ICON_ID} />
+      <Moon class="icon theme" id={HEADER_DARK_MODE_ICON_ID} />
     </button>
     <button class="menuBtn" id={MENU_TOGGLE_BUTTON_ID}>
-      <Menu class="icon visible" id={HEADER_MENU_ICON} />
-      <X class="icon" id={HEADER_CLOSE_ICON} />
+      <Menu class="icon visible" id={HEADER_MENU_ICON_ID} />
+      <X class="icon" id={HEADER_CLOSE_ICON_ID} />
     </button>
   </section>
   <section class="dropdownMenu" id={DROPDOWN_MENU_ID}>
@@ -78,6 +78,7 @@ import Navigation from "../components/Navigation.astro";
     margin-left: 1rem;
     margin-right: auto;
   }
+
   .themeBtn {
     height: 2rem;
     width: 2rem;
@@ -96,14 +97,9 @@ import Navigation from "../components/Navigation.astro";
     transform: scale(1.05);
   }
 
-  .themeBtn:hover > .icon {
-    opacity: 1;
-  }
-
   .icon {
     background-color: inherit;
     color: var(--foreground);
-    opacity: 1;
     transition: opacity 0.25s ease;
     display: none;
   }
@@ -114,10 +110,6 @@ import Navigation from "../components/Navigation.astro";
 
   .menuBtn {
     display: none;
-  }
-
-  .menuBtn > .icon {
-    opacity: 1;
   }
 
   .dropdownMenu {
