@@ -4,10 +4,10 @@
   --background-alternate: #f1f5f9;
   --background-primary-blurred: rgba(241, 245, 249, 0.8);
 
-  --shadow: #030712;
+  --shadow: #9ca3af;
 
   --foreground: #030712;
-  --accent: #6b7280;
+  --accent: #d1d5db;
 }
 
 .dark {
@@ -25,7 +25,6 @@
 html {
   background-color: var(--background-primary);
   color: var(--foreground);
-  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -35,6 +34,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  font-family: "Inter Variable", sans-serif;
 }
 
 main {

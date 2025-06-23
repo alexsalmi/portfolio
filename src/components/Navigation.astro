@@ -46,12 +46,13 @@ const { direction } = Astro.props;
 	.navItem {
 		padding: 0.25rem 0.5rem;
 		border-radius: 0.5rem;
-		transition: all 0.25s ease;
+		transition: background-color 0.5s ease;
 	}
 
 	.navItem:hover {
 		text-decoration: none;
 		background-color: var(--background-secondary);
+		transform: scale(102%);
 	}
 
 	@media (max-width: 800px) {
