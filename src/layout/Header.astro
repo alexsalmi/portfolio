@@ -1,17 +1,19 @@
 ---
-import { Menu, Sun } from '@lucide/astro';
-import { DROPDOWN_MENU_ID, MENU_TOGGLE_BUTTON_ID, THEME_TOGGLE_BUTTON_ID } from '../constants';
+import { Menu, Moon, Sun, X } from '@lucide/astro';
+import { DROPDOWN_MENU_ID, HEADER_CLOSE_ICON, HEADER_DARK_MODE_ICON, HEADER_LIGHT_MODE_ICON, HEADER_MENU_ICON, MAIN_HEADER_ID, MENU_TOGGLE_BUTTON_ID, THEME_TOGGLE_BUTTON_ID } from '../constants';
 import Navigation from '../components/Navigation.astro';
 ---
 <header>
-	<section class="mainHeader">
+	<section class="mainHeader" id={MAIN_HEADER_ID}>
 		<h1 class="title">Alex Salmi</h1>
 		<Navigation />
 		<button class="themeBtn" id={THEME_TOGGLE_BUTTON_ID}>
-			<Sun class='icon'/>
+			<Sun class='icon theme visible' id={HEADER_LIGHT_MODE_ICON}/>
+			<Moon class='icon theme' id={HEADER_DARK_MODE_ICON}/>
 		</button>
 		<button class="menuBtn" id={MENU_TOGGLE_BUTTON_ID}>
-			<Menu class='icon'/>
+			<Menu class='icon visible' id={HEADER_MENU_ICON}/>
+			<X class='icon' id={HEADER_CLOSE_ICON}/>
 		</button>
 	</section>
 	<section class="dropdownMenu" id={DROPDOWN_MENU_ID}>
@@ -53,17 +55,17 @@ import Navigation from '../components/Navigation.astro';
 	.mainHeader {
 		width: 100%;
 		height: 3rem;
-		padding: 0.5rem 1rem 0.5rem 1.5rem;
+		padding: 0.5rem 1rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: 1.5rem;
+		gap: 1rem;
 	}
 
 	.title {
 		font-size: 1.25rem;
 		font-weight: 600;
-		margin-left: 0;
+		margin-left: 1rem;
 		margin-right: auto;
 	}
 	.themeBtn {
@@ -93,6 +95,12 @@ import Navigation from '../components/Navigation.astro';
 		color: var(--foreground);
 		opacity: 1;
 		transition: opacity 0.25s ease;
+		display: none;
+	}
+
+
+	.icon.visible {
+		display: block;
 	}
 
 	.menuBtn {
@@ -118,6 +126,9 @@ import Navigation from '../components/Navigation.astro';
 	}
 
 	@media (max-width: 800px) {
+		.title {
+			margin-left: 0;
+		}
 		.menuBtn {
 			display: block;
 		}

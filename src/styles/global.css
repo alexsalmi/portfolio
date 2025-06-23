@@ -1,7 +1,6 @@
 :root {
   --background-primary: #f1f5f9;
   --background-secondary: #e2e8f0;
-  --background-alternate: #f1f5f9;
   --background-primary-blurred: rgba(241, 245, 249, 0.8);
 
   --shadow: #9ca3af;
@@ -11,10 +10,9 @@
 }
 
 .dark {
-  --background-primary: #111827;
-  --background-secondary: #1f2937;
-  --background-alternate: #334155;
-  --background-primary-blurred: rgba(17, 24, 39, 0.8);
+  --background-primary: #22262f;
+  --background-secondary: #333947;
+  --background-primary-blurred: rgba(34, 38, 47, 0.8);
 
   --shadow: #4b5563;
 
