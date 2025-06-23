@@ -1,136 +1,145 @@
 ---
-import { Menu, Moon, Sun, X } from '@lucide/astro';
-import { DROPDOWN_MENU_ID, HEADER_CLOSE_ICON, HEADER_DARK_MODE_ICON, HEADER_LIGHT_MODE_ICON, HEADER_MENU_ICON, MAIN_HEADER_ID, MENU_TOGGLE_BUTTON_ID, THEME_TOGGLE_BUTTON_ID } from '../constants';
-import Navigation from '../components/Navigation.astro';
+import { Menu, Moon, Sun, X } from "@lucide/astro";
+import {
+  DROPDOWN_MENU_ID,
+  HEADER_CLOSE_ICON,
+  HEADER_DARK_MODE_ICON,
+  HEADER_LIGHT_MODE_ICON,
+  HEADER_MENU_ICON,
+  MAIN_HEADER_ID,
+  MENU_TOGGLE_BUTTON_ID,
+  THEME_TOGGLE_BUTTON_ID,
+} from "../constants";
+import Navigation from "../components/Navigation.astro";
 ---
+
 <header>
-	<section class="mainHeader" id={MAIN_HEADER_ID}>
-		<h1 class="title">Alex Salmi</h1>
-		<Navigation />
-		<button class="themeBtn" id={THEME_TOGGLE_BUTTON_ID}>
-			<Sun class='icon theme visible' id={HEADER_LIGHT_MODE_ICON}/>
-			<Moon class='icon theme' id={HEADER_DARK_MODE_ICON}/>
-		</button>
-		<button class="menuBtn" id={MENU_TOGGLE_BUTTON_ID}>
-			<Menu class='icon visible' id={HEADER_MENU_ICON}/>
-			<X class='icon' id={HEADER_CLOSE_ICON}/>
-		</button>
-	</section>
-	<section class="dropdownMenu" id={DROPDOWN_MENU_ID}>
-		<Navigation direction='vertical'/>
-	</section>
+  <section class="mainHeader" id={MAIN_HEADER_ID}>
+    <h1 class="title">Alex Salmi</h1>
+    <Navigation />
+    <button class="themeBtn" id={THEME_TOGGLE_BUTTON_ID}>
+      <Sun class="icon theme visible" id={HEADER_LIGHT_MODE_ICON} />
+      <Moon class="icon theme" id={HEADER_DARK_MODE_ICON} />
+    </button>
+    <button class="menuBtn" id={MENU_TOGGLE_BUTTON_ID}>
+      <Menu class="icon visible" id={HEADER_MENU_ICON} />
+      <X class="icon" id={HEADER_CLOSE_ICON} />
+    </button>
+  </section>
+  <section class="dropdownMenu" id={DROPDOWN_MENU_ID}>
+    <Navigation direction="vertical" />
+  </section>
 </header>
 
 <style>
-	header {
-		width: calc(100% - 1rem);
-		max-width: 1440px;
-		background: var(--background-primary-blurred);
-		position: fixed;
-		top: 0.5em;
-		border-radius: 0.75rem;
-		backdrop-filter: blur(10px);
-		-webkit-backdrop-filter: blur(10px);
-		font-size: 1.1rem;
-		font-weight: 500;
-		transition: box-shadow 0.1s linear;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+  header {
+    width: calc(100% - 1rem);
+    max-width: 1440px;
+    background: var(--background-primary-blurred);
+    position: fixed;
+    top: 0.5em;
+    border-radius: 0.75rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: box-shadow 0.1s linear;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-	header.shadow {
-		box-shadow: 0 0 0.33rem var(--shadow);
-	}
-	
-	header.animate-in {
-		animation: 0.25s linear header-in;
-	}
+  header.shadow {
+    box-shadow: 0 0 0.33rem var(--shadow);
+  }
 
-	header.animate-out {
-		animation: 0.25s linear header-out;
-		transform: translateY(-5rem);
-	}
+  header.animate-in {
+    animation: 0.25s linear header-in;
+  }
 
-	.mainHeader {
-		width: 100%;
-		height: 3rem;
-		padding: 0.5rem 1rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 1rem;
-	}
+  header.animate-out {
+    animation: 0.25s linear header-out;
+    transform: translateY(-5rem);
+  }
 
-	.title {
-		font-size: 1.25rem;
-		font-weight: 600;
-		margin-left: 1rem;
-		margin-right: auto;
-	}
-	.themeBtn {
-		height: 2rem;
-		width: 2rem;
-		border-radius: 0.5rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-right: 0;
-		margin-left: auto;
-		background-color: inherit;
-		transition: background-color 0.25s ease;
-	}
+  .mainHeader {
+    width: 100%;
+    height: 3rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
 
-	.themeBtn:hover {
-		background-color: var(--background-secondary);
-		transform: scale(1.05);
-	}
+  .title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    margin-right: auto;
+  }
+  .themeBtn {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+    margin-left: auto;
+    background-color: inherit;
+    transition: background-color 0.25s ease;
+  }
 
-	.themeBtn:hover > .icon {
-		opacity: 1;
-	}
+  .themeBtn:hover {
+    background-color: var(--background-secondary);
+    transform: scale(1.05);
+  }
 
-	.icon {
-		background-color: inherit;
-		color: var(--foreground);
-		opacity: 1;
-		transition: opacity 0.25s ease;
-		display: none;
-	}
+  .themeBtn:hover > .icon {
+    opacity: 1;
+  }
 
+  .icon {
+    background-color: inherit;
+    color: var(--foreground);
+    opacity: 1;
+    transition: opacity 0.25s ease;
+    display: none;
+  }
 
-	.icon.visible {
-		display: block;
-	}
+  .icon.visible {
+    display: block;
+  }
 
-	.menuBtn {
-		display: none;
-	}
+  .menuBtn {
+    display: none;
+  }
 
-	.menuBtn > .icon {
-		opacity: 1;
-	}
+  .menuBtn > .icon {
+    opacity: 1;
+  }
 
-	.dropdownMenu {
-		width: calc(100% - 1rem);
-		height: fit-content;
-		opacity: 0;
-		overflow: hidden;
-		height: 0;
-		transition: all 0.25s ease;
-	}
-	
-	.expanded {
-		height: 11.75rem;
-		opacity: 1;
-	}
+  .dropdownMenu {
+    width: calc(100% - 1rem);
+    height: fit-content;
+    opacity: 0;
+    overflow: hidden;
+    height: 0;
+    transition: all 0.25s ease;
+  }
 
-	@media (max-width: 800px) {
-		.title {
-			margin-left: 0;
-		}
-		.menuBtn {
-			display: block;
-		}
-	}
+  .expanded {
+    height: 11.75rem;
+    opacity: 1;
+  }
+
+  @media (max-width: 800px) {
+    .title {
+      margin-left: 0;
+    }
+    .menuBtn {
+      display: block;
+    }
+  }
 </style>

@@ -1,63 +1,64 @@
 ---
 interface Props {
-	direction?: "horizontal" | "vertical";
+  direction?: "horizontal" | "vertical";
 }
 
 const { direction } = Astro.props;
 ---
+
 <nav class=`nav ${direction || "horizontal"}`>
-	<ul>
-		<li class=`navList ${direction || "horizontal"}`>
-			<a href="/about" class="navItem">About</a>
-			<a href="/experience" class="navItem">Experience</a>
-			<a href="/projects" class="navItem">Projects</a>
-			<a href="/connect" class="navItem">Connect</a>
-		</li>
-	</ul>
+  <ul>
+    <li class=`navList ${direction || "horizontal"}`>
+      <a href="/about" class="navItem">About</a>
+      <a href="/experience" class="navItem">Experience</a>
+      <a href="/projects" class="navItem">Projects</a>
+      <a href="/connect" class="navItem">Connect</a>
+    </li>
+  </ul>
 </nav>
 <style>
-	.nav.horizontal {
-		position: absolute;
-	}
+  .nav.horizontal {
+    position: absolute;
+  }
 
-	.nav.vertical {
-		width: 100%;
-		border-top: 1px solid var(--accent);
-	}
+  .nav.vertical {
+    width: 100%;
+    border-top: 1px solid var(--accent);
+  }
 
-	.navList {
-		display: flex;
-		gap: 1rem;
-	}
+  .navList {
+    display: flex;
+    gap: 1rem;
+  }
 
-	.navList.vertical {
-		flex-direction: column;
-		padding: 0.5rem 0;
-		gap: 0;
-		width: 100%;
-	}
+  .navList.vertical {
+    flex-direction: column;
+    padding: 0.5rem 0;
+    gap: 0;
+    width: 100%;
+  }
 
-	.navList.vertical > .navItem {
-		width: 100%;
-		text-align: right;
-		padding: 0.5rem 0.75rem;
-	}
+  .navList.vertical > .navItem {
+    width: 100%;
+    text-align: right;
+    padding: 0.5rem 0.75rem;
+  }
 
-	.navItem {
-		padding: 0.25rem 0.5rem;
-		border-radius: 0.5rem;
-		transition: background-color 0.5s ease;
-	}
+  .navItem {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.5s ease;
+  }
 
-	.navItem:hover {
-		text-decoration: none;
-		background-color: var(--background-secondary);
-		transform: scale(102%);
-	}
+  .navItem:hover {
+    text-decoration: none;
+    background-color: var(--background-secondary);
+    transform: scale(102%);
+  }
 
-	@media (max-width: 800px) {
-		.horizontal {
-			display: none;
-		}
-	}
+  @media (max-width: 800px) {
+    .horizontal {
+      display: none;
+    }
+  }
 </style>
