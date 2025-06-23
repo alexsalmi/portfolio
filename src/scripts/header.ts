@@ -42,6 +42,7 @@ export default (() => {
     dropdownMenu?.classList.add("expanded");
     headerMenuIcon?.classList.remove("visible");
     headerCloseIcon?.classList.add("visible");
+    if (!header?.classList.contains("shadow")) header?.classList.add("shadow");
   };
   // #endregion
 

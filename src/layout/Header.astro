@@ -1,5 +1,4 @@
 ---
-import { Menu, Moon, Sun, X } from "@lucide/astro";
 import {
   DROPDOWN_MENU_ID,
   HEADER_CLOSE_ICON_ID,
@@ -11,6 +10,7 @@ import {
   THEME_TOGGLE_BUTTON_ID,
 } from "../constants";
 import Navigation from "../components/Navigation.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <header>
@@ -18,12 +18,24 @@ import Navigation from "../components/Navigation.astro";
     <h1 class="title">Alex Salmi</h1>
     <Navigation />
     <button class="themeBtn" id={THEME_TOGGLE_BUTTON_ID}>
-      <Sun class="icon theme visible" id={HEADER_LIGHT_MODE_ICON_ID} />
-      <Moon class="icon theme" id={HEADER_DARK_MODE_ICON_ID} />
+      <Icon
+        name="ic:outline-light-mode"
+        class="icon visible"
+        id={HEADER_LIGHT_MODE_ICON_ID}
+      />
+      <Icon
+        name="ic:outline-dark-mode"
+        class="icon"
+        id={HEADER_DARK_MODE_ICON_ID}
+      />
     </button>
     <button class="menuBtn" id={MENU_TOGGLE_BUTTON_ID}>
-      <Menu class="icon visible" id={HEADER_MENU_ICON_ID} />
-      <X class="icon" id={HEADER_CLOSE_ICON_ID} />
+      <Icon
+        name="ic:round-menu"
+        class="icon visible"
+        id={HEADER_MENU_ICON_ID}
+      />
+      <Icon name="ic:round-close" class="icon" id={HEADER_CLOSE_ICON_ID} />
     </button>
   </section>
   <section class="dropdownMenu" id={DROPDOWN_MENU_ID}>
@@ -102,6 +114,8 @@ import Navigation from "../components/Navigation.astro";
     color: var(--foreground);
     transition: opacity 0.25s ease;
     display: none;
+    height: 1.5rem;
+    width: 1.5rem;
   }
 
   .icon.visible {
