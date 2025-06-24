@@ -14,15 +14,9 @@ import { Icon } from "astro-icon/components";
       sizes throughout my career, from large established financial institutions,
       to smaller creative studios in the video game industry.
     </p>
-    <p>
-      I have a deep passion for development and software engineering. In my free
-      time, I like to work on various side projects to teach myself new
-      languages or frameworks, or even just to create something that I'm
-      passionate about.
-    </p>
   </article>
   <section class="skills">
-    <h3 class="title">My Skills</h3>
+    <h3 class="title">Skills</h3>
     <p class="description">
       These are the tools I have the most experience using to create, deploy,
       and maintain applications in both my professional and personal projects.
@@ -70,14 +64,14 @@ import { Icon } from "astro-icon/components";
   }
 
   .title {
-    font-weight: 600;
+    font-weight: 500;
     width: 100%;
     font-size: 2.5rem;
     border-bottom: 1px solid var(--accent-secondary);
   }
 
   .description {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .skills {
@@ -91,7 +85,11 @@ import { Icon } from "astro-icon/components";
   }
 
   .skills > .title {
-    font-size: 1.9rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    opacity: 0.66;
+    border-bottom: none;
+    text-align: center;
   }
 
   .skillSection {
@@ -101,7 +99,6 @@ import { Icon } from "astro-icon/components";
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid var(--accent-secondary);
     box-shadow: 0 0 0.5rem var(--shadow);
     border-radius: 1rem;
     padding: 0.5rem 1rem 1rem;
@@ -141,5 +138,15 @@ import { Icon } from "astro-icon/components";
   .icon {
     width: 1.75rem;
     height: 1.75rem;
+  }
+
+  @media (max-width: 800px) {
+    .skillItem {
+      font-size: 0.9rem;
+    }
+    .icon {
+      width: 1.33rem;
+      height: 1.33rem;
+    }
   }
 </style>

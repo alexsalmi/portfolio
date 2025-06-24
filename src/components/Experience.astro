@@ -3,52 +3,56 @@ import { Image } from "astro:assets";
 import rockstarLogo from "../assets/rockstar.svg";
 import jhLogo from "../assets/jh.jpg";
 import buLogo from "../assets/bu.png";
-import { EXPERIENCE_SECTION_ID } from "../constants";
+import { EXPERIENCE, EXPERIENCE_SECTION_ID } from "../constants";
 ---
 
 <section class="experience" id={EXPERIENCE_SECTION_ID}>
-  <h2 class="title">Experience</h2>
-  <h3 class="sectionTitle">Work</h3>
-  <div class="job">
-    <Image
-      class="logo"
-      width={248}
-      height={248}
-      src={rockstarLogo}
-      alt="Rockstar Games Logo"
-    />
-    <div class="jobTitle">
-      <h2>Software Engineer</h2>
-      <h3>Rockstar Games - Technical Art</h3>
-    </div>
-  </div>
-  <div class="job">
-    <Image
-      class="logo"
-      width={248}
-      height={248}
-      src={jhLogo}
-      alt="John Hancock Logo"
-    />
-    <div class="jobTitle">
-      <h2>Senior Full Stack Software Engineer</h2>
-      <h3>John Hancock - Identity & Access Management</h3>
-    </div>
-  </div>
-  <h3 class="sectionTitle">Education</h3>
-  <div class="job">
-    <Image
-      class="logo"
-      width={248}
-      height={248}
-      src={buLogo}
-      alt="Boston University Logo"
-    />
-    <div class="jobTitle">
-      <h2>B.S. Computer Engineering</h2>
-      <h3>Boston University, College of Engineering</h3>
-    </div>
-  </div>
+  <h2 class="title">Work Experience</h2>
+  {
+    EXPERIENCE.work.map((job) => (
+      <div class="experienceItem">
+        <Image
+          class="logo sticky"
+          width={248}
+          height={248}
+          src={job.image}
+          alt={`${job.company.split(" - ")[0]} Logo`}
+        />
+        <div class="content">
+          <h2>{job.role}</h2>
+          <h3>{job.company}</h3>
+          <h4>{job.location}</h4>
+          <h4>{job.dates}</h4>
+          <ul class="list">
+            {job.points.map((point) => (
+              <li>{point}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="connectorLine" />
+      </div>
+    ))
+  }
+  <h3 class="title">Education</h3>
+  {
+    EXPERIENCE.education.map((job) => (
+      <div class="experienceItem">
+        <Image
+          class="logo"
+          width={248}
+          height={248}
+          src={job.image}
+          alt={`${job.school.split(",")[0]} Logo`}
+        />
+        <div class="content">
+          <h2>{job.degree}</h2>
+          <h3>{job.school}</h3>
+          <h4>{job.location}</h4>
+          <h4>{job.dates}</h4>
+        </div>
+      </div>
+    ))
+  }
 </section>
 
 <style>
@@ -59,40 +63,103 @@ import { EXPERIENCE_SECTION_ID } from "../constants";
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5rem 1rem;
-    gap: 2rem;
+    padding: 4rem 1rem;
   }
 
   .title {
-    font-weight: 600;
-    width: 100%;
-    font-size: 2.5rem;
-    border-bottom: 1px solid var(--accent-secondary);
-  }
-
-  .sectionTitle {
     font-size: 1.25rem;
     font-weight: 500;
     opacity: 0.66;
+    margin-top: 1rem;
   }
 
-  .job {
+  .experienceItem {
+    position: relative;
     width: 100%;
-    min-height: 4rem;
     display: flex;
     gap: 1.5rem;
+    padding: 1rem 0;
   }
 
   .logo {
     height: 4rem;
     width: 4rem;
     border-radius: 0.8rem;
+    margin-top: 0.25rem;
+    z-index: 5;
   }
 
-  .jobTitle {
+  .logo.sticky {
+    position: sticky;
+    top: 5rem;
+  }
+
+  .content {
+    width: calc(100% - 5rem);
+    font-size: 0.9rem;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+  }
+
+  .content > h2 {
+    font-weight: 600;
+  }
+
+  .content > h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  .content > h4 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .list {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .list > li {
+    list-style: circle;
+  }
+
+  .filler {
+    width: 4rem;
+  }
+
+  .connectorLine {
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background-color: var(--foreground);
+    opacity: 0.75;
+    left: 2rem;
+    top: 5rem;
+  }
+
+  @media (max-width: 800px) {
+    .content > h2 {
+      font-size: 1.33rem;
+      font-weight: 600;
+    }
+
+    .content > h3 {
+      font-size: 1.1rem;
+    }
+    .logo {
+      height: 2.5rem;
+      width: 2.5rem;
+      border-radius: 0.5rem;
+    }
+    .filler {
+      width: 2.5rem;
+    }
+
+    .connectorLine {
+      left: 1.25rem;
+      top: 3rem;
+    }
   }
 </style>
