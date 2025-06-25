@@ -50,7 +50,6 @@ import { EXPERIENCE, EXPERIENCE_SECTION_ID } from "../constants";
           <h4>{job.location}</h4>
           <h4>{job.dates}</h4>
         </div>
-        <div class="connectorLine education" />
       </div>
     ))
   }
@@ -68,7 +67,7 @@ import { EXPERIENCE, EXPERIENCE_SECTION_ID } from "../constants";
   }
 
   .title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 500;
     opacity: 0.66;
     margin: 1rem 5.5rem;
@@ -135,7 +134,7 @@ import { EXPERIENCE, EXPERIENCE_SECTION_ID } from "../constants";
 
   .connectorLine {
     position: absolute;
-    height: 100%;
+    height: calc(100% + 3rem);
     width: 1px;
     background-color: var(--foreground);
     left: 2rem;
@@ -152,16 +151,6 @@ import { EXPERIENCE, EXPERIENCE_SECTION_ID } from "../constants";
     top: -0.25rem;
     transform: translateX(-42%);
     content: "";
-  }
-
-  .connectorLine.education {
-    height: 6rem;
-    top: auto;
-    bottom: 6rem;
-  }
-
-  .connectorLine.education::before {
-    content: none;
   }
 
   @media (max-width: 800px) {
