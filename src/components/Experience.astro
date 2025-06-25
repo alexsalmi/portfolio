@@ -50,6 +50,7 @@ import { EXPERIENCE, EXPERIENCE_SECTION_ID } from "../constants";
           <h4>{job.location}</h4>
           <h4>{job.dates}</h4>
         </div>
+        <div class="connectorLine education" />
       </div>
     ))
   }
@@ -62,15 +63,17 @@ import { EXPERIENCE, EXPERIENCE_SECTION_ID } from "../constants";
     background-color: var(--background-primary);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     padding: 4rem 1rem;
   }
 
   .title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 500;
     opacity: 0.66;
-    margin-top: 1rem;
+    margin: 1rem 5.5rem;
+    border-bottom: 1px solid var(--accent);
+    width: calc(100% - 6rem);
   }
 
   .experienceItem {
@@ -132,11 +135,32 @@ import { EXPERIENCE, EXPERIENCE_SECTION_ID } from "../constants";
   .connectorLine {
     position: absolute;
     height: 100%;
-    width: 2px;
+    width: 1px;
     background-color: var(--foreground);
-    opacity: 0.75;
     left: 2rem;
-    top: 5rem;
+    top: 2rem;
+  }
+
+  .connectorLine::before {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--foreground);
+    display: inline-block;
+    position: absolute;
+    top: -0.25rem;
+    transform: translateX(-42%);
+    content: "";
+  }
+
+  .connectorLine.education {
+    height: 6.7rem;
+    top: auto;
+    bottom: 7rem;
+  }
+
+  .connectorLine.education::before {
+    content: none;
   }
 
   @media (max-width: 800px) {
