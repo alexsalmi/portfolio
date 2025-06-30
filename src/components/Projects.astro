@@ -1,16 +1,156 @@
 ---
-import { PROJECTS_SECTION_ID } from "../constants";
+import { Image } from "astro:assets";
+import { PROJECTS_SECTION_ID, SKILLS } from "../constants";
+import { PROJECTS } from "../constants/projects";
+import { Icon } from "astro-icon/components";
+
+const getSkill = (name: string) => {
+  return (
+    SKILLS.Frameworks.find((sk) => sk.label === name) ||
+    SKILLS.Languages.find((sk) => sk.label === name) ||
+    SKILLS.Services.find((sk) => sk.label === name)
+  );
+};
 ---
 
-<section class="projects" id={PROJECTS_SECTION_ID}><h2>Projects</h2></section>
+<section class="projects" id={PROJECTS_SECTION_ID}>
+  <h2 class="title">Projects</h2>
+  {
+    PROJECTS.map((project) => (
+      <div class="projectItem">
+        <Image
+          class="projectImage"
+          width={1024}
+          height={1024}
+          src={project.image}
+          alt={`An image of ${project.name}`}
+        />
+        <div class="projectInfo">
+          <h3>{project.name}</h3>
+          <p>{project.description}</p>
+          <div class="projectSkills">
+            {project.skills.map(getSkill).map((skill) => (
+              <span
+                class="skillItem"
+                style={`color: ${skill?.color}; background-color: ${skill?.background};`}
+              >
+                <Icon
+                  name={skill?.icon}
+                  class="icon"
+                  id={`${skill?.label}_icon`}
+                />
+                <label for={`${skill?.label}_icon`}>{skill?.label}</label>
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</section>
 
 <style>
   .projects {
-    height: 50em;
     width: 100%;
     background-color: var(--background-secondary);
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 1rem;
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    opacity: 0.66;
+    margin: 0 5.5rem 1rem;
+    border-bottom: 1px solid var(--accent-secondary);
+    width: 100%;
+    max-width: calc(var(--max-width) * 3 / 4);
+  }
+
+  .projectItem {
+    display: flex;
+    max-width: calc(var(--max-width) * 3 / 4);
+    height: 30rem;
+    box-shadow: 0 0 0.5rem var(--shadow);
+    border-radius: 3rem;
+  }
+
+  .projectImage {
+    height: 100%;
+    width: auto;
+    max-width: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 3rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .projectInfo {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .projectInfo > h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .projectInfo > p {
+    opacity: 0.9;
+    margin-bottom: 1rem;
+  }
+
+  .projectSkills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: auto 1rem 0.5rem;
+  }
+
+  .skillItem {
+    flex-grow: 1;
+    display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  @media (max-width: 800px) {
+    .projectItem {
+      flex-direction: column;
+      height: fit-content;
+      border-radius: 1.5rem;
+    }
+
+    .projectImage {
+      width: 100%;
+      max-width: none;
+      height: auto;
+      border-radius: 1.5rem;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .skillItem {
+      font-size: 0.85rem;
+    }
+    .icon {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
   }
 </style>

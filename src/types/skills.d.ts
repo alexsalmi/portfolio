@@ -1,11 +1,12 @@
 interface SkillSections {
-  Languages: Skil[];
-  Frameworks: Skil[];
-  Services: Skil[];
+  Languages: Skill[];
+  Frameworks: Skill[];
+  Services: Skill[];
 }
 
 interface Skill {
   label: string;
   icon: string;
   color: string;
+  background: string;
 }
