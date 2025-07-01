@@ -1,0 +1,195 @@
+---
+import { Image } from "astro:assets";
+import rockstarLogo from "../assets/rockstar.svg";
+import jhLogo from "../assets/jh.jpg";
+import buLogo from "../assets/bu.png";
+import { EXPERIENCE, EXPERIENCE_SECTION_ID } from "../constants";
+---
+
+<section class="experience" id={EXPERIENCE_SECTION_ID}>
+  <h2 class="title">Work Experience</h2>
+  {
+    EXPERIENCE.work.map((job) => (
+      <div class="experienceItem">
+        <Image
+          class="logo sticky"
+          width={248}
+          height={248}
+          src={job.image}
+          alt={`${job.company.split(" - ")[0]} Logo`}
+        />
+        <div class="content">
+          <h2>{job.role}</h2>
+          <h3>{job.company}</h3>
+          <h4>{job.location}</h4>
+          <h4>{job.dates}</h4>
+          <ul class="list">
+            {job.points.map((point) => (
+              <li>{point}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="connectorLine" />
+      </div>
+    ))
+  }
+  <h2 class="title">Education</h2>
+  {
+    EXPERIENCE.education.map((job) => (
+      <div class="experienceItem">
+        <Image
+          class="logo"
+          width={248}
+          height={248}
+          src={job.image}
+          alt={`${job.school.split(",")[0]} Logo`}
+        />
+        <div class="content">
+          <h2>{job.degree}</h2>
+          <h3>{job.school}</h3>
+          <h4>{job.location}</h4>
+          <h4>{job.dates}</h4>
+        </div>
+      </div>
+    ))
+  }
+</section>
+
+<style>
+  .experience {
+    width: 100%;
+    max-width: calc(var(--max-width) * 3 / 4);
+    background-color: var(--background-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5rem 1rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    opacity: 0.66;
+    margin: 0 5.5rem 1rem;
+    border-bottom: 1px solid var(--accent);
+    width: calc(100% - 6rem);
+  }
+
+  .experienceItem {
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .logo {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 0.8rem;
+    margin-top: 0.25rem;
+    z-index: 5;
+  }
+
+  .logo.sticky {
+    position: sticky;
+    top: 5rem;
+  }
+
+  .content {
+    width: calc(100% - 5rem);
+    font-size: 0.9rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content > h2 {
+    font-weight: 600;
+  }
+
+  .content > h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  .content > h4 {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.9;
+  }
+
+  .list {
+    font-size: 1rem;
+    margin: 0.5rem 0 1.5rem;
+    opacity: 0.8;
+  }
+
+  .list > li {
+    list-style: circle;
+  }
+
+  .filler {
+    width: 4rem;
+  }
+
+  .connectorLine {
+    position: absolute;
+    height: calc(100% + 3rem);
+    width: 1px;
+    background-color: var(--foreground);
+    left: 2rem;
+    top: 2rem;
+  }
+
+  .connectorLine::before {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--foreground);
+    display: inline-block;
+    position: absolute;
+    top: -0.25rem;
+    transform: translateX(-42%);
+    content: "";
+  }
+
+  @media (max-width: 800px) {
+    .title {
+      margin: 1rem 0;
+      padding: 0 0.5rem;
+      width: 100%;
+    }
+
+    .title:last-of-type {
+      margin: 0 4rem 1rem;
+      width: calc(100% - 4rem);
+    }
+
+    .content > h2 {
+      font-size: 1.33rem;
+      font-weight: 600;
+    }
+
+    .content > h3 {
+      font-size: 1.1rem;
+    }
+    .logo {
+      height: 2.5rem;
+      width: 2.5rem;
+      border-radius: 0.5rem;
+    }
+    .filler {
+      width: 2.5rem;
+    }
+
+    .connectorLine {
+      left: 1.25rem;
+      top: 2rem;
+    }
+
+    .connectorLine.education {
+      bottom: 6rem;
+      height: 5rem;
+    }
+  }
+</style>

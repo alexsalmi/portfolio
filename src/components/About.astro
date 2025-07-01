@@ -1,0 +1,154 @@
+---
+import { ABOUT_SECTION_ID, SKILLS } from "../constants";
+import { Icon } from "astro-icon/components";
+---
+
+<section class="about" id={ABOUT_SECTION_ID}>
+  <article class="summary">
+    <h2 class="title">About Me</h2>
+    <p>
+      I'm a full stack software engineer with 5 years of experience creating
+      highly performant and scalable web apps. I specialize in creating sleek
+      front ends in Next.js and React, as well as performant back ends in .NET
+      Core and Node.js. I have worked in a variety of industries and company
+      sizes throughout my career, from large established financial institutions,
+      to smaller creative studios in the video game industry.
+    </p>
+  </article>
+  <section class="skills">
+    <h3 class="title">Skills</h3>
+    <p class="description">
+      These are the tools I have the most experience using to create, deploy,
+      and maintain applications in both my professional and personal projects.
+    </p>
+    {
+      Object.keys(SKILLS).map((section) => (
+        <div class="skillSection">
+          <h4 class="skillSectionLabel">{section}</h4>
+          <div class="skillList">
+            {SKILLS[section as keyof SkillSections].map(
+              ({ label, icon, color, background }) => (
+                <span
+                  class="skillItem"
+                  style={`color: ${color}; background-color: ${background};`}
+                >
+                  <Icon name={icon} class="icon" id={`${label}_icon`} />
+                  <label for={`${label}_icon`}>{label}</label>
+                </span>
+              ),
+            )}
+          </div>
+        </div>
+      ))
+    }
+  </section>
+</section>
+
+<style>
+  .about {
+    width: 100%;
+    background-color: var(--background-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 1rem;
+    gap: 3rem;
+  }
+
+  .summary {
+    max-width: calc(var(--max-width) * 3 / 4);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .title {
+    opacity: 0.75;
+    font-weight: 500;
+    width: 100%;
+    font-size: 1.6rem;
+    border-bottom: 1px solid var(--accent-secondary);
+  }
+
+  .description {
+    margin-bottom: 1rem;
+  }
+
+  .skills {
+    width: 100%;
+    max-width: calc(var(--max-width) * 3 / 4);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    background-color: inherit;
+  }
+
+  .skills > .title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    opacity: 0.66;
+    border-bottom: none;
+    text-align: center;
+  }
+
+  .skillSection {
+    position: relative;
+    flex: 1 1;
+    min-width: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 0.5rem var(--shadow);
+    border-radius: 1rem;
+    padding: 0.5rem 1rem 1rem;
+    background-color: inherit;
+    margin: 1rem;
+    background-color: var(--background-alternate);
+  }
+
+  .skillSectionLabel {
+    width: 100%;
+    padding: 0 0.25rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    opacity: 0.9;
+    border-bottom: 1px solid var(--accent-secondary);
+  }
+
+  .skillList {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .skillItem {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  @media (max-width: 800px) {
+    .skillItem {
+      font-size: 0.85rem;
+    }
+    .icon {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+</style>

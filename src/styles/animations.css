@@ -1,0 +1,17 @@
+@keyframes header-in {
+  from {
+    transform: translateY(-5rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes header-out {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-5rem);
+  }
+}

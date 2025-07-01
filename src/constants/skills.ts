@@ -1,0 +1,140 @@
+export const SKILLS: SkillSections = {
+  Languages: [
+    {
+      icon: "simple-icons:typescript",
+      label: "Typescript",
+      color: "white",
+      background: "#2d79c7",
+    },
+    {
+      icon: "simple-icons:javascript",
+      label: "Javascript",
+      color: "black",
+      background: "#f7e018",
+    },
+    {
+      icon: "simple-icons:html5",
+      label: "HTML",
+      color: "white",
+      background: "#e65127",
+    },
+    {
+      icon: "mdi:language-css3",
+      label: "CSS",
+      color: "white",
+      background: "#0c73b8",
+    },
+    {
+      icon: "mdi:language-csharp",
+      label: "C Sharp",
+      color: "white",
+      background: "#813084",
+    },
+    {
+      icon: "mdi:database",
+      label: "SQL",
+      color: "white",
+      background: "#3a6ea5",
+    },
+    {
+      icon: "mdi:language-java",
+      label: "Java",
+      color: "white",
+      background: "#5283a2",
+    },
+  ],
+  Frameworks: [
+    {
+      icon: "simple-icons:nextdotjs",
+      label: "Next.js",
+      color: "white",
+      background: "black",
+    },
+    {
+      icon: "simple-icons:dotnet",
+      label: ".NET",
+      color: "white",
+      background: "#5027d5",
+    },
+    {
+      icon: "simple-icons:nodedotjs",
+      label: "Node.js",
+      color: "white",
+      background: "#689f63",
+    },
+    {
+      icon: "simple-icons:react",
+      label: "React",
+      color: "#61dafb",
+      background: "#222222",
+    },
+    {
+      icon: "simple-icons:vuedotjs",
+      label: "Vue",
+      color: "#3fb984",
+      background: "#35495e",
+    },
+    {
+      icon: "simple-icons:spring",
+      label: "Spring",
+      color: "white",
+      background: "#6cb52d",
+    },
+    {
+      icon: "simple-icons:react",
+      label: "React Native",
+      color: "#61dafb",
+      background: "#222222",
+    },
+    {
+      icon: "simple-icons:astro",
+      label: "Astro",
+      color: "white",
+      background: "#5a18a5",
+    },
+  ],
+  Services: [
+    {
+      icon: "simple-icons:git",
+      label: "Git",
+      color: "white",
+      background: "#f05033",
+    },
+    {
+      icon: "simple-icons:github",
+      label: "Github",
+      color: "white",
+      background: "black",
+    },
+    {
+      icon: "simple-icons:mongodb",
+      label: "MongoDB",
+      color: "#00ed64",
+      background: "#001e2b",
+    },
+    {
+      icon: "simple-icons:redis",
+      label: "Redis",
+      color: "white",
+      background: "#ff4235",
+    },
+    {
+      icon: "simple-icons:postgresql",
+      label: "PostgreSQL",
+      color: "white",
+      background: "#316192",
+    },
+    {
+      icon: "simple-icons:docker",
+      label: "Docker",
+      color: "white",
+      background: "#1f97ee",
+    },
+    {
+      icon: "simple-icons:kubernetes",
+      label: "Kubernetes",
+      color: "white",
+      background: "#2e6ce6",
+    },
+  ],
+};
