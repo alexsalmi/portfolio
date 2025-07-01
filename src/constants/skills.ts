@@ -58,7 +58,7 @@ export const SKILLS: SkillSections = {
     },
     {
       icon: "simple-icons:nodedotjs",
-      label: "Express.js",
+      label: "Node.js",
       color: "white",
       background: "#689f63",
     },
