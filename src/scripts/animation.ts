@@ -3,7 +3,10 @@ import { SCROLL_ANIMATION_ID } from "../constants";
 export default (() => {
   const observer = new IntersectionObserver((entries) => {
     for (const entry of entries) {
-      if (entry.isIntersecting) entry.target.classList.add("animate-in");
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate-in");
+        entry.target.classList.remove("pre-animation");
+      }
     }
   });
 
@@ -11,6 +14,6 @@ export default (() => {
 
   for (const element of elements) {
     observer.observe(element);
-    console.log(element);
+    element.classList.add("pre-animation");
   }
 })();

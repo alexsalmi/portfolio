@@ -1,3 +1,8 @@
+.pre-animation {
+  transform: translateY(5rem);
+  opacity: 0 !important;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .header-animate-in {
     animation: 0.25s linear header-in;
@@ -72,10 +77,5 @@
   from {
     transform: translateY(5rem);
     opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
   }
 }
