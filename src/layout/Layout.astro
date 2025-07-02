@@ -54,7 +54,7 @@ const { page } = Astro.props;
     <script
       defer
       data-domain="asalmi.com"
-      src={`https://${import.meta.env.PLAUSIBLE_DOMAIN}/js/script.hash.outbound-links.js`}
+      src={`${import.meta.env.PLAUSIBLE_DOMAIN}/js/script.hash.outbound-links.js`}
     ></script>
     <script is:inline>
       const root = document.querySelector(":root");
