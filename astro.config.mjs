@@ -2,7 +2,10 @@ import { defineConfig, fontProviders } from "astro/config";
 
 import icon from "astro-icon";
 
+import sitemap from "@astrojs/sitemap";
+
 export default defineConfig({
+  site: "https://asalmi.com",
   experimental: {
     fonts: [
       {
@@ -14,5 +17,5 @@ export default defineConfig({
     ],
   },
 
-  integrations: [icon()],
+  integrations: [icon(), sitemap()],
 });
