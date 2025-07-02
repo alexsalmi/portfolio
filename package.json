@@ -15,6 +15,7 @@
     "@iconify-json/ic": "^1.2.2",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/simple-icons": "^1.2.39",
+    "@vercel/functions": "^2.2.2",
     "astro": "^5.10.0",
     "astro-icon": "^1.1.5"
   },
