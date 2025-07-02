@@ -11,7 +11,7 @@ import {
   <h2 class="title" id={SCROLL_ANIMATION_ID}>Work Experience</h2>
   {
     EXPERIENCE.work.map((job) => (
-      <div class="experienceItem">
+      <div class="experience-item">
         <Image
           class="logo sticky"
           width={248}
@@ -31,14 +31,14 @@ import {
             ))}
           </ul>
         </div>
-        <div class="connectorLine" />
+        <div class="connector-line" />
       </div>
     ))
   }
   <h2 class="title" id={SCROLL_ANIMATION_ID}>Education</h2>
   {
     EXPERIENCE.education.map((job) => (
-      <div class="experienceItem">
+      <div class="experience-item">
         <Image
           class="logo"
           width={248}
@@ -78,7 +78,7 @@ import {
     width: calc(100% - 6rem);
   }
 
-  .experienceItem {
+  .experience-item {
     position: relative;
     width: 100%;
     display: flex;
@@ -135,7 +135,7 @@ import {
     width: 4rem;
   }
 
-  .connectorLine {
+  .connector-line {
     position: absolute;
     height: calc(100% + 3rem);
     width: 1px;
@@ -144,7 +144,7 @@ import {
     top: 2rem;
   }
 
-  .connectorLine::before {
+  .connector-line::before {
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
@@ -185,12 +185,12 @@ import {
       width: 2.5rem;
     }
 
-    .connectorLine {
+    .connector-line {
       left: 1.25rem;
       top: 2rem;
     }
 
-    .connectorLine.education {
+    .connector-line.education {
       bottom: 6rem;
       height: 5rem;
     }

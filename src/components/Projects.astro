@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { PROJECTS_SECTION_ID, SCROLL_ANIMATION_ID, SKILLS } from "../constants";
-import { PROJECTS } from "../constants/projects";
+import { PROJECTS, PROJECTS_SECTION_ID, SCROLL_ANIMATION_ID, SKILLS } from "../constants";
 import { Icon } from "astro-icon/components";
 
 const getSkill = (name: string) => {
@@ -17,21 +16,21 @@ const getSkill = (name: string) => {
   <h2 class="title" id={SCROLL_ANIMATION_ID}>Projects</h2>
   {
     PROJECTS.map((project) => (
-      <div class="projectItem" id={SCROLL_ANIMATION_ID}>
+      <div class="project-item" id={SCROLL_ANIMATION_ID}>
         <Image
-          class="projectImage"
+          class="project-image"
           width={1024}
           height={1024}
           src={project.image}
           alt={`An image of ${project.name}`}
         />
-        <div class="projectInfo">
+        <div class="project-info">
           <h3>{project.name}</h3>
           <p>{project.description}</p>
-          <div class="projectSkills">
+          <div class="project-skills">
             {project.skills.map(getSkill).map((skill) => (
               <span
-                class="skillItem"
+                class="skill-item"
                 style={`color: ${skill?.color}; background-color: ${skill?.background};`}
               >
                 <Icon
@@ -96,7 +95,7 @@ const getSkill = (name: string) => {
     margin-bottom: -1rem;
   }
 
-  .projectItem {
+  .project-item {
     display: flex;
     max-width: calc(var(--max-width) * 3 / 4);
     height: 25rem;
@@ -105,11 +104,11 @@ const getSkill = (name: string) => {
     background-color: var(--background-alternate);
   }
 
-  .projectItem:nth-child(odd) {
+  .project-item:nth-child(odd) {
     flex-direction: row-reverse;
   }
 
-  .projectImage {
+  .project-image {
     height: 100%;
     width: auto;
     max-width: 50%;
@@ -121,7 +120,7 @@ const getSkill = (name: string) => {
     border-right: 2px solid var(--accent-secondary);
   }
 
-  .projectItem:nth-child(odd) > .projectImage {
+  .project-item:nth-child(odd) > .project-image {
     border-radius: 1rem;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -129,7 +128,7 @@ const getSkill = (name: string) => {
     border-left: 2px solid var(--accent-secondary);
   }
 
-  .projectInfo {
+  .project-info {
     position: relative;
     padding: 1rem;
     display: flex;
@@ -137,30 +136,30 @@ const getSkill = (name: string) => {
     gap: 1rem;
   }
 
-  .projectItem:nth-child(odd) > .projectInfo {
+  .project-item:nth-child(odd) > .project-info {
     padding: 1rem;
     padding-left: 1.5rem;
   }
 
-  .projectInfo > h3 {
+  .project-info > h3 {
     font-size: 1.5rem;
     font-weight: 600;
     border-bottom: 1px solid var(--accent);
   }
 
-  .projectInfo > p {
+  .project-info > p {
     opacity: 0.9;
     margin-bottom: 1rem;
   }
 
-  .projectSkills {
+  .project-skills {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin: auto 0 0;
   }
 
-  .skillItem {
+  .skill-item {
     flex-grow: 1;
     display: flex;
     align-items: center;
@@ -203,16 +202,16 @@ const getSkill = (name: string) => {
   }
 
   @media (max-width: 650px) {
-    .projectItem {
+    .project-item {
       flex-direction: column;
       height: fit-content;
     }
 
-    .projectItem:nth-child(odd) {
+    .project-item:nth-child(odd) {
       flex-direction: column;
     }
 
-    .projectImage {
+    .project-image {
       width: 100%;
       max-width: none;
       height: auto;
@@ -223,7 +222,7 @@ const getSkill = (name: string) => {
       border-bottom: 2px solid var(--accent-secondary);
     }
 
-    .projectItem:nth-child(odd) > .projectImage {
+    .project-item:nth-child(odd) > .project-image {
       border-radius: 1rem;
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
@@ -231,7 +230,7 @@ const getSkill = (name: string) => {
       border-bottom: 2px solid var(--accent-secondary);
     }
 
-    .skillItem {
+    .skill-item {
       font-size: 0.85rem;
     }
 

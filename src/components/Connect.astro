@@ -13,7 +13,7 @@ import {
     SOCIAL_LINKS.map(({ icon, link, prompt, color, background }) => (
       <a href={link} id={SCROLL_ANIMATION_ID}>
         <button
-          class="linkBtn"
+          class="link-button"
           style={`color: ${color}; background-color: ${background};`}
         >
           <Icon name={icon} class="icon" />
@@ -43,7 +43,7 @@ import {
     margin-bottom: 1.5rem;
   }
 
-  .linkBtn {
+  .link-button {
     width: 17rem;
     display: flex;
     align-items: center;
