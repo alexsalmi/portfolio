@@ -37,6 +37,17 @@ const { page } = Astro.props;
       content="alex salmi, alexander salmi, salmi, portfolio, software engineer, engineer, web developer, developer, full stack, new york"
     />
     <meta name="author" content="Alex Salmi" />
+    <meta property="og:title" content="Alex Salmi" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://asalmi.com" />
+    <meta property="og:image" content="https://asalmi.com/preview.jpg" />
+    <meta property="og:image:height" content="910" />
+    <meta property="og:image:width" content="1900" />
+    <meta property="og:description" 
+      content="Alex Salmi's personal website and portfolio" />
+    <meta property="og:determiner" content="the" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="asalmi.com" />
     <title>Alex Salmi {page ? ` - ${page}` : ""}</title>
     <script is:inline>
       const root = document.querySelector(":root");
