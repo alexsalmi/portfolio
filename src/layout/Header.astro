@@ -8,6 +8,7 @@ import {
   MAIN_HEADER_ID,
   MENU_TOGGLE_BUTTON_ID,
   THEME_TOGGLE_BUTTON_ID,
+  HEADER_THEME_PLACEHOLDER_ICON_ID
 } from "../constants";
 import Navigation from "../components/Navigation.astro";
 import { Icon } from "astro-icon/components";
@@ -19,8 +20,13 @@ import { Icon } from "astro-icon/components";
     <Navigation />
     <button class="themeBtn" id={THEME_TOGGLE_BUTTON_ID}>
       <Icon
+        name="ic:baseline-circle"
+        class="icon visible placeholder"
+        id={HEADER_THEME_PLACEHOLDER_ICON_ID}
+      />
+      <Icon
         name="ic:outline-light-mode"
-        class="icon visible"
+        class="icon"
         id={HEADER_LIGHT_MODE_ICON_ID}
       />
       <Icon
@@ -112,6 +118,10 @@ import { Icon } from "astro-icon/components";
 
   .icon.visible {
     display: block;
+  }
+
+  .icon.placeholder {
+    opacity: 0.25;
   }
 
   .menuBtn {

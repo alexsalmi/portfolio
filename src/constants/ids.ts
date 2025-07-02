@@ -11,6 +11,7 @@ export const MENU_TOGGLE_BUTTON_ID = "menu-toggle-button";
 
 // Header ids
 export const MAIN_HEADER_ID = "main-header";
+export const HEADER_THEME_PLACEHOLDER_ICON_ID = "header-theme-placeholder-icon";
 export const HEADER_LIGHT_MODE_ICON_ID = "header-light-mode-icon";
 export const HEADER_DARK_MODE_ICON_ID = "header-dark-mode-icon";
 export const HEADER_MENU_ICON_ID = "header-menu-icon";
