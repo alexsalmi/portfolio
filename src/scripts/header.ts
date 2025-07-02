@@ -22,13 +22,13 @@ export default (() => {
 
   // #region Helper Functions
   const hideHeader = () => {
-    header?.classList.add("animate-out");
-    header?.classList.remove("animate-in");
+    header?.classList.add("header-animate-out");
+    header?.classList.remove("header-animate-in");
   };
 
   const showHeader = () => {
-    header?.classList.remove("animate-out");
-    header?.classList.add("animate-in");
+    header?.classList.remove("header-animate-out");
+    header?.classList.add("header-animate-in");
   };
 
   const hideDropdownMenu = () => {
@@ -56,11 +56,14 @@ export default (() => {
     if (
       currDir === "down" &&
       window.scrollY > 200 &&
-      !header.classList.contains("animate-out")
+      !header.classList.contains("header-animate-out")
     ) {
       hideHeader();
       hideDropdownMenu();
-    } else if (currDir === "up" && header.classList.contains("animate-out")) {
+    } else if (
+      currDir === "up" &&
+      header.classList.contains("header-animate-out")
+    ) {
       showHeader();
     }
 
