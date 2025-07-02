@@ -53,8 +53,10 @@ const { page } = Astro.props;
     <title>Alex Salmi {page ? ` - ${page}` : ""}</title>
     <script
       defer
+      async
       data-domain="asalmi.com"
-      src={`${import.meta.env.PLAUSIBLE_DOMAIN}/js/script.hash.outbound-links.js`}
+      src="/js/script.hash.outbound-links.js"
+      data-api="/api/event"
     ></script>
     <script is:inline>
       const root = document.querySelector(":root");
