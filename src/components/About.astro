@@ -1,12 +1,12 @@
 ---
-import { ABOUT_SECTION_ID, SKILLS } from "../constants";
+import { ABOUT_SECTION_ID, SCROLL_ANIMATION_ID, SKILLS } from "../constants";
 import { Icon } from "astro-icon/components";
 ---
 
 <section class="about" id={ABOUT_SECTION_ID}>
   <article class="summary">
-    <h2 class="title">About Me</h2>
-    <p>
+    <h2 class="title" id={SCROLL_ANIMATION_ID}>About Me</h2>
+    <p id={SCROLL_ANIMATION_ID}>
       I'm a full stack software engineer with 5 years of experience creating
       highly performant and scalable web apps. I specialize in creating sleek
       front ends in Next.js and React, as well as performant back ends in .NET
@@ -16,14 +16,14 @@ import { Icon } from "astro-icon/components";
     </p>
   </article>
   <section class="skills">
-    <h3 class="title">Skills</h3>
-    <p class="description">
+    <h3 class="title" id={SCROLL_ANIMATION_ID}>Skills</h3>
+    <p class="description" id={SCROLL_ANIMATION_ID}>
       These are the tools I have the most experience using to create, deploy,
       and maintain applications in both my professional and personal projects.
     </p>
     {
       Object.keys(SKILLS).map((section) => (
-        <div class="skillSection">
+        <div class="skillSection" id={SCROLL_ANIMATION_ID}>
           <h4 class="skillSectionLabel">{section}</h4>
           <div class="skillList">
             {SKILLS[section as keyof SkillSections].map(
@@ -52,7 +52,6 @@ import { Icon } from "astro-icon/components";
     flex-direction: column;
     align-items: center;
     padding: 5rem 1rem;
-    gap: 3rem;
   }
 
   .summary {
@@ -61,6 +60,7 @@ import { Icon } from "astro-icon/components";
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    padding-bottom: 3rem;
   }
 
   .title {
@@ -82,7 +82,6 @@ import { Icon } from "astro-icon/components";
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5rem;
-    background-color: inherit;
   }
 
   .skills > .title {

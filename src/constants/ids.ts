@@ -16,3 +16,6 @@ export const HEADER_DARK_MODE_ICON_ID = "header-dark-mode-icon";
 export const HEADER_MENU_ICON_ID = "header-menu-icon";
 export const HEADER_CLOSE_ICON_ID = "header-close-icon";
 export const DROPDOWN_MENU_ID = "dropdown-menu";
+
+// Animation ids
+export const SCROLL_ANIMATION_ID = "scroll-animation";

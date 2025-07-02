@@ -1,13 +1,17 @@
 ---
 import { Icon } from "astro-icon/components";
-import { CONNECT_SECTION_ID, SOCIAL_LINKS } from "../constants";
+import {
+  CONNECT_SECTION_ID,
+  SCROLL_ANIMATION_ID,
+  SOCIAL_LINKS,
+} from "../constants";
 ---
 
 <section class="connect" id={CONNECT_SECTION_ID}>
-  <h2 class="title">Let's Connect</h2>
+  <h2 class="title" id={SCROLL_ANIMATION_ID}>Let's Connect</h2>
   {
     SOCIAL_LINKS.map(({ icon, link, prompt, color, background }) => (
-      <a href={link}>
+      <a href={link} id={SCROLL_ANIMATION_ID}>
         <button
           class="linkBtn"
           style={`color: ${color}; background-color: ${background};`}

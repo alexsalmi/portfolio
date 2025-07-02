@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { PROJECTS_SECTION_ID, SKILLS } from "../constants";
+import { PROJECTS_SECTION_ID, SCROLL_ANIMATION_ID, SKILLS } from "../constants";
 import { PROJECTS } from "../constants/projects";
 import { Icon } from "astro-icon/components";
 
@@ -14,10 +14,10 @@ const getSkill = (name: string) => {
 ---
 
 <section class="projects" id={PROJECTS_SECTION_ID}>
-  <h2 class="title">Projects</h2>
+  <h2 class="title" id={SCROLL_ANIMATION_ID}>Projects</h2>
   {
     PROJECTS.map((project) => (
-      <div class="projectItem">
+      <div class="projectItem" id={SCROLL_ANIMATION_ID}>
         <Image
           class="projectImage"
           width={1024}

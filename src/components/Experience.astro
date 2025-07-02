@@ -1,13 +1,14 @@
 ---
 import { Image } from "astro:assets";
-import rockstarLogo from "../assets/rockstar.svg";
-import jhLogo from "../assets/jh.jpg";
-import buLogo from "../assets/bu.png";
-import { EXPERIENCE, EXPERIENCE_SECTION_ID } from "../constants";
+import {
+  EXPERIENCE,
+  EXPERIENCE_SECTION_ID,
+  SCROLL_ANIMATION_ID,
+} from "../constants";
 ---
 
 <section class="experience" id={EXPERIENCE_SECTION_ID}>
-  <h2 class="title">Work Experience</h2>
+  <h2 class="title" id={SCROLL_ANIMATION_ID}>Work Experience</h2>
   {
     EXPERIENCE.work.map((job) => (
       <div class="experienceItem">
@@ -17,8 +18,9 @@ import { EXPERIENCE, EXPERIENCE_SECTION_ID } from "../constants";
           height={248}
           src={job.image}
           alt={`${job.company.split(" - ")[0]} Logo`}
+          id={SCROLL_ANIMATION_ID}
         />
-        <div class="content">
+        <div class="content" id={SCROLL_ANIMATION_ID}>
           <h2>{job.role}</h2>
           <h3>{job.company}</h3>
           <h4>{job.location}</h4>
@@ -33,7 +35,7 @@ import { EXPERIENCE, EXPERIENCE_SECTION_ID } from "../constants";
       </div>
     ))
   }
-  <h2 class="title">Education</h2>
+  <h2 class="title" id={SCROLL_ANIMATION_ID}>Education</h2>
   {
     EXPERIENCE.education.map((job) => (
       <div class="experienceItem">
@@ -43,8 +45,9 @@ import { EXPERIENCE, EXPERIENCE_SECTION_ID } from "../constants";
           height={248}
           src={job.image}
           alt={`${job.school.split(",")[0]} Logo`}
+          id={SCROLL_ANIMATION_ID}
         />
-        <div class="content">
+        <div class="content" id={SCROLL_ANIMATION_ID}>
           <h2>{job.degree}</h2>
           <h3>{job.school}</h3>
           <h4>{job.location}</h4>
