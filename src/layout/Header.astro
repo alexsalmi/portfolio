@@ -8,7 +8,7 @@ import {
   MAIN_HEADER_ID,
   MENU_TOGGLE_BUTTON_ID,
   THEME_TOGGLE_BUTTON_ID,
-  HEADER_THEME_PLACEHOLDER_ICON_ID
+  HEADER_THEME_PLACEHOLDER_ICON_ID,
 } from "../constants";
 import Navigation from "../components/Navigation.astro";
 import { Icon } from "astro-icon/components";
@@ -18,7 +18,7 @@ import { Icon } from "astro-icon/components";
   <section class="mainHeader" id={MAIN_HEADER_ID}>
     <h1 class="title">Alex Salmi</h1>
     <Navigation />
-    <button class="themeBtn" id={THEME_TOGGLE_BUTTON_ID}>
+    <button class="themeBtn" aria-label="theme-button" id={THEME_TOGGLE_BUTTON_ID}>
       <Icon
         name="ic:baseline-circle"
         class="icon visible placeholder"
@@ -35,7 +35,7 @@ import { Icon } from "astro-icon/components";
         id={HEADER_DARK_MODE_ICON_ID}
       />
     </button>
-    <button class="menuBtn" id={MENU_TOGGLE_BUTTON_ID}>
+    <button class="menuBtn" aria-label="menu-button" id={MENU_TOGGLE_BUTTON_ID}>
       <Icon
         name="ic:round-menu"
         class="icon visible"

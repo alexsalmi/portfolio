@@ -45,6 +45,7 @@ const getSkill = (name: string) => {
           </div>
           <a
             href={project.link}
+            aria-label={`Link to ${project.name}`}
             class="link"
             target="_blank"
             rel="noopener noreferrer"
@@ -57,6 +58,7 @@ const getSkill = (name: string) => {
           </a>
           <a
             href={project.github}
+            aria-label={`Github link to ${project.name}`}
             class="link"
             target="_blank"
             rel="noopener noreferrer"

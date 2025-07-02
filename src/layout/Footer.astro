@@ -11,6 +11,7 @@ import { Icon } from "astro-icon/components";
         SOCIAL_LINKS.map(({ icon, link }) => (
           <a
             href={link}
+            aria-label={`Link to ${link}`}
             target={link.includes("mailto:") ? "" : "_blank"}
             rel="noopener noreferrer"
           >
