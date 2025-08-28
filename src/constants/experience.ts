@@ -5,10 +5,18 @@ import buLogo from "../assets/bu.png";
 export const EXPERIENCE = {
   work: [
     {
+      role: "Senior Software Engineer",
+      company: "Rockstar Games - Technical Art",
+      location: "New York, NY (On Site)",
+      dates: "August 2025 - Present",
+      image: rockstarLogo,
+      points: [],
+    },
+    {
       role: "Software Engineer",
       company: "Rockstar Games - Technical Art",
       location: "New York, NY (On Site)",
-      dates: "October 2024 - Present",
+      dates: "October 2024 - August 2025",
       image: rockstarLogo,
       points: [],
     },
