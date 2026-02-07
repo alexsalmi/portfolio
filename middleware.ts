@@ -11,7 +11,7 @@ export default function middleware(request: Request) {
     );
   }
 
-  if (url.pathname.startsWith("/api/send")) {
-    return rewrite(new URL(`${process.env.UMAMI_DOMAIN}/api/send`));
+  if (url.pathname.startsWith("/api/event")) {
+    return rewrite(new URL(`${process.env.UMAMI_DOMAIN}/api/event`));
   }
 }
