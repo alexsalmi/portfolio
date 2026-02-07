@@ -3,7 +3,7 @@ import { rewrite } from "@vercel/functions";
 export default function middleware(request: Request) {
   const url = new URL(request.url);
 
-  if (url.pathname === "/js/init-script.js") {
+  if (url.pathname === "/init-script.js") {
     return rewrite(
       new URL(
         `${process.env.UMAMI_DOMAIN}/script.js`,
@@ -11,7 +11,7 @@ export default function middleware(request: Request) {
     );
   }
 
-  if (url.pathname.startsWith("/api/info")) {
-    return rewrite(new URL(`${process.env.UMAMI_DOMAIN}/api/info`));
+  if (url.pathname.startsWith("/api/send")) {
+    return rewrite(new URL(`${process.env.UMAMI_DOMAIN}/api/send`));
   }
 }
