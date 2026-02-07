@@ -3,15 +3,15 @@ import { rewrite } from "@vercel/functions";
 export default function middleware(request: Request) {
   const url = new URL(request.url);
 
-  if (url.pathname === "/js/script.hash.outbound-links.js") {
+  if (url.pathname === "/js/analytics-script.js") {
     return rewrite(
       new URL(
-        `${process.env.PLAUSIBLE_DOMAIN}/js/script.hash.outbound-links.js`,
+        `${process.env.UMAMI_DOMAIN}/script.js`,
       ),
     );
   }
 
-  if (url.pathname.startsWith("/api/event")) {
-    return rewrite(new URL(`${process.env.PLAUSIBLE_DOMAIN}/api/event`));
+  if (url.pathname.startsWith("/api/info")) {
+    return rewrite(new URL(`${process.env.UMAMI_DOMAIN}/api/info`));
   }
 }
